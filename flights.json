@@ -1,12 +1,22 @@
 {
-  "aktualisiert": "2026-11-22T12:40:46.837513+00:00",
+  "aktualisiert": "2026-11-22T13:29:20.311344+00:00",
   "flugzeuge": [
     {
-      "flug": "EWG2462",
-      "typ": "A319",
-      "entfernung_km": 19.9,
-      "hoehe_m": 7841,
-      "geschwindigkeit_kmh": 720,
+      "flug": "WUK778",
+      "typ": "A21N",
+      "entfernung_km": 10.3,
+      "hoehe_m": 10980,
+      "geschwindigkeit_kmh": 757,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt"
+    },
+    {
+      "flug": "PGT95RT",
+      "typ": "A21N",
+      "entfernung_km": 12.9,
+      "hoehe_m": 10668,
+      "geschwindigkeit_kmh": 913,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt"
