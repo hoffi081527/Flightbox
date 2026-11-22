@@ -1,12 +1,22 @@
 {
-  "aktualisiert": "2026-11-22T19:22:54.382670+00:00",
+  "aktualisiert": "2026-11-22T20:07:46.988887+00:00",
   "flugzeuge": [
     {
-      "flug": "THY7ZP",
-      "typ": "A21N",
-      "entfernung_km": 9.7,
-      "hoehe_m": 10058,
-      "geschwindigkeit_kmh": 865,
+      "flug": "UAE182",
+      "typ": "A359",
+      "entfernung_km": 15.8,
+      "hoehe_m": 11796,
+      "geschwindigkeit_kmh": 959,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt"
+    },
+    {
+      "flug": "DICCB",
+      "typ": "C25M",
+      "entfernung_km": 15.8,
+      "hoehe_m": 3513,
+      "geschwindigkeit_kmh": 499,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt"
