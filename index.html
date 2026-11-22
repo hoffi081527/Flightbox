@@ -1,110 +1,103 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rohrbach Flight Box</title>
+<title>Flightbox Rohrbach</title>
 <style>
-body {
-  background: #101820;
-  color: white;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 10px;
-  text-align: center;
-}
-h1 {
-  color: #ffcc00;
-  font-size: 26px;
-  margin: 5px 0;
-}
-#info {
-  color: #aaaaaa;
-  font-size: 13px;
-  margin-bottom: 10px;
-}
-#flights {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.tile {
-  box-sizing: border-box;
-  width: 32.5%;
-  min-height: 170px;
-  background: #1e2c38;
-  border: 1px solid #405060;
-  border-radius: 8px;
-  padding: 10px;
-  margin-bottom: 8px;
-  text-align: left;
-}
-.flight {
-  color: #ffcc00;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-.detail {
-  font-size: 16px;
-  line-height: 1.5;
-}
-.empty {
-  color: #888888;
-  text-align: center;
-  padding-top: 45px;
-}
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 12px;
+    background: #101820;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  h1 {
+    margin: 0 0 10px;
+    font-size: 21px;
+    text-align: center;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .tile {
+    background: #243746;
+    border: 1px solid #496579;
+    border-radius: 10px;
+    min-height: 105px;
+    padding: 12px 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .label {
+    font-size: 13px;
+    color: #b5cad9;
+    margin-bottom: 10px;
+  }
+  .value {
+    font-size: 25px;
+    font-weight: bold;
+    overflow-wrap: break-word;
+  }
+  #updated {
+    text-align: center;
+    color: #b5cad9;
+    margin-top: 12px;
+    font-size: 13px;
+  }
 </style>
 </head>
 <body>
 
-<h1>FLIGHT BOX - ROHRBACH</h1>
-<div id="info">20 km Umkreis - Lade Flugzeugdaten...</div>
-<div id="flights"></div>
+<h1>FLIGHTBOX ROHRBACH</h1>
+
+<div class="grid">
+  <div class="tile">
+    <div class="label">FLUGNUMMER</div>
+    <div class="value" id="flug">–</div>
+  </div>
+  <div class="tile">
+    <div class="label">FLUGZEUGTYP</div>
+    <div class="value" id="typ">–</div>
+  </div>
+  <div class="tile">
+    <div class="label">FLUGHÖHE</div>
+    <div class="value" id="hoehe">–</div>
+  </div>
+  <div class="tile">
+    <div class="label">ENTFERNUNG</div>
+    <div class="value" id="entfernung">–</div>
+  </div>
+  <div class="tile">
+    <div class="label">GESCHWINDIGKEIT</div>
+    <div class="value" id="tempo">–</div>
+  </div>
+  <div class="tile">
+    <div class="label">STATUS</div>
+    <div class="value" id="status">–</div>
+  </div>
+</div>
+
+<div id="updated">Lade Flugzeugdaten ...</div>
 
 <script>
-function anzeigen(daten) {
-  var fluege = daten.flugzeuge || [];
-  var html = "";
+function anzeigen(id, wert) {
+  document.getElementById(id).textContent = wert;
+}
 
-  for (var i = 0; i < 6; i++) {
-    html += '<div class="tile">';
-
-    if (i < fluege.length) {
-      var f = fluege[i];
-
-      html += '<div class="flight">' + sicher(f.flug) + '</div>';
-      html += '<div class="detail">';
-      html += 'Typ: ' + sicher(f.typ) + '<br>';
-      html += 'Höhe: ' + wert(f.hoehe_m, ' m') + '<br>';
-      html += 'Entfernung: ' + wert(f.entfernung_km, ' km') + '<br>';
-      html += 'Tempo: ' + wert(f.geschwindigkeit_kmh, ' km/h') + '<br>';
-      html += 'Status: ' + sicher(f.status);
-      html += '</div>';
-    } else {
-      html += '<div class="empty">Kein Flugzeug im Umkreis</div>';
-    }
-
-    html += '</div>';
+function zahl(wert, einheit) {
+  if (wert === null || wert === undefined || wert === "") {
+    return "–";
   }
-
-  document.getElementById("flights").innerHTML = html;
-  document.getElementById("info").innerHTML =
-    '20 km Umkreis | ' + fluege.length +
-    ' Flugzeug(e) | Datenstand: ' +
-    sicher(daten.aktualisiert || 'unbekannt');
-}
-
-function sicher(wert) {
-  return String(wert == null ? 'Unbekannt' : wert)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
-}
-
-function wert(v, einheit) {
-  return v == null ? 'Unbekannt' : sicher(v) + einheit;
+  var n = Number(wert);
+  if (isNaN(n)) return "–";
+  return Math.round(n).toLocaleString("de-DE") + " " + einheit;
 }
 
 function laden() {
@@ -112,18 +105,44 @@ function laden() {
   xhr.open("GET", "flights.json?t=" + new Date().getTime(), true);
 
   xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4) {
-      if (xhr.status === 200) {
-        try {
-          anzeigen(JSON.parse(xhr.responseText));
-        } catch (e) {
-          document.getElementById("info").innerHTML =
-            "Fehler beim Lesen der Flugzeugdaten";
-        }
+    if (xhr.readyState !== 4) return;
+
+    if (xhr.status !== 200) {
+      anzeigen("updated", "Datenabruf fehlgeschlagen");
+      return;
+    }
+
+    try {
+      var daten = JSON.parse(xhr.responseText);
+      var flugzeuge = daten.flugzeuge || [];
+
+      flugzeuge.sort(function(a, b) {
+        return Number(a.entfernung_km) - Number(b.entfernung_km);
+      });
+
+      if (flugzeuge.length === 0) {
+        anzeigen("flug", "Kein Flugzeug");
+        anzeigen("typ", "–");
+        anzeigen("hoehe", "–");
+        anzeigen("entfernung", "–");
+        anzeigen("tempo", "–");
+        anzeigen("status", "–");
       } else {
-        document.getElementById("info").innerHTML =
-          "Flugzeugdaten derzeit nicht erreichbar";
+        var f = flugzeuge[0];
+
+        anzeigen("flug", f.flug || "Unbekannt");
+        anzeigen("typ", f.typ || "Unbekannt");
+        anzeigen("hoehe", zahl(f.hoehe_m, "m"));
+        anzeigen("entfernung", zahl(f.entfernung_km, "km"));
+        anzeigen("tempo", zahl(f.geschwindigkeit_kmh, "km/h"));
+        anzeigen("status", f.status || "Unbekannt");
       }
+
+      anzeigen("updated", "Letzte Datenaktualisierung: " +
+        (daten.aktualisiert || "Unbekannt"));
+
+    } catch (e) {
+      anzeigen("updated", "Fehler beim Lesen der Daten");
     }
   };
 
