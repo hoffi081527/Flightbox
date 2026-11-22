@@ -1,4 +1,13 @@
 {
-  "aktualisiert": "2026-11-22T11:46:56.886184+00:00",
-  "flugzeuge": []
+  "aktualisiert": "2026-11-22T12:06:23.987973+00:00",
+  "flugzeuge": [
+    {
+      "flug": "DEBPN",
+      "typ": "P208",
+      "entfernung_km": 10.0,
+      "hoehe_m": 366,
+      "geschwindigkeit_kmh": 124,
+      "status": "In der Luft"
+    }
+  ]
 }
