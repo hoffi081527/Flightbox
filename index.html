@@ -4,32 +4,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Meine Flight Box</title>
+<title>Rohrbach Flight Box</title>
 <style>
 body {
   background: #101820;
   color: white;
   font-family: Arial, sans-serif;
-  text-align: center;
   margin: 0;
-  padding: 15px;
+  padding: 10px;
+  text-align: center;
 }
-h1 { color: #ffcc00; font-size: 28px; }
-.label { color: #aaaaaa; font-size: 18px; margin-top: 20px; }
-.value { font-size: 34px; font-weight: bold; margin-top: 5px; }
-.note { color: #ffcc00; font-size: 15px; margin-top: 35px; }
+h1 {
+  color: #ffcc00;
+  font-size: 26px;
+  margin: 5px 0;
+}
+#info {
+  color: #aaaaaa;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+#flights {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.tile {
+  box-sizing: border-box;
+  width: 32.5%;
+  min-height: 170px;
+  background: #1e2c38;
+  border: 1px solid #405060;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+.flight {
+  color: #ffcc00;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.detail {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.empty {
+  color: #888888;
+  text-align: center;
+  padding-top: 45px;
+}
 </style>
 </head>
 <body>
-<h1>FLIGHT BOX</h1>
-<div class="label">Flugnummer</div>
-<div class="value">LH1234</div>
-<div class="label">Flugzeugtyp</div>
-<div class="value">Airbus A320</div>
-<div class="label">Flughoehe</div>
-<div class="value">10.500 m</div>
-<div class="label">Entfernung</div>
-<div class="value">25 km</div>
-<div class="note">TESTANZEIGE - Keine Live-Daten</div>
+
+<h1>FLIGHT BOX - ROHRBACH</h1>
+<div id="info">20 km Umkreis - Lade Flugzeugdaten...</div>
+<div id="flights"></div>
+
+<script>
+function anzeigen(daten) {
+  var fluege = daten.flugzeuge || [];
+  var html = "";
+
+  for (var i = 0; i < 6; i++) {
+    html += '<div class="tile">';
+
+    if (i < fluege.length) {
+      var f = fluege[i];
+
+      html += '<div class="flight">' + sicher(f.flug) + '</div>';
+      html += '<div class="detail">';
+      html += 'Typ: ' + sicher(f.typ) + '<br>';
+      html += 'Höhe: ' + wert(f.hoehe_m, ' m') + '<br>';
+      html += 'Entfernung: ' + wert(f.entfernung_km, ' km') + '<br>';
+      html += 'Tempo: ' + wert(f.geschwindigkeit_kmh, ' km/h') + '<br>';
+      html += 'Status: ' + sicher(f.status);
+      html += '</div>';
+    } else {
+      html += '<div class="empty">Kein Flugzeug im Umkreis</div>';
+    }
+
+    html += '</div>';
+  }
+
+  document.getElementById("flights").innerHTML = html;
+  document.getElementById("info").innerHTML =
+    '20 km Umkreis | ' + fluege.length +
+    ' Flugzeug(e) | Datenstand: ' +
+    sicher(daten.aktualisiert || 'unbekannt');
+}
+
+function sicher(wert) {
+  return String(wert == null ? 'Unbekannt' : wert)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function wert(v, einheit) {
+  return v == null ? 'Unbekannt' : sicher(v) + einheit;
+}
+
+function laden() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "flights.json?t=" + new Date().getTime(), true);
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        try {
+          anzeigen(JSON.parse(xhr.responseText));
+        } catch (e) {
+          document.getElementById("info").innerHTML =
+            "Fehler beim Lesen der Flugzeugdaten";
+        }
+      } else {
+        document.getElementById("info").innerHTML =
+          "Flugzeugdaten derzeit nicht erreichbar";
+      }
+    }
+  };
+
+  xhr.send();
+}
+
+laden();
+setInterval(laden, 60000);
+</script>
+
 </body>
 </html>
+
