@@ -1,25 +1,4 @@
 {
-  "aktualisiert": "2026-11-22T20:07:46.988887+00:00",
-  "flugzeuge": [
-    {
-      "flug": "UAE182",
-      "typ": "A359",
-      "entfernung_km": 15.8,
-      "hoehe_m": 11796,
-      "geschwindigkeit_kmh": 959,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt"
-    },
-    {
-      "flug": "DICCB",
-      "typ": "C25M",
-      "entfernung_km": 15.8,
-      "hoehe_m": 3513,
-      "geschwindigkeit_kmh": 499,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt"
-    }
-  ]
+  "aktualisiert": "2026-11-22T20:48:10.480451+00:00",
+  "flugzeuge": []
 }
