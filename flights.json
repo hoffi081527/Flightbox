@@ -1,4 +1,35 @@
 {
-  "aktualisiert": "2026-11-22T17:14:26.189377+00:00",
-  "flugzeuge": []
+  "aktualisiert": "2026-11-22T17:53:04.339052+00:00",
+  "flugzeuge": [
+    {
+      "flug": "EWG7UZ",
+      "typ": "A319",
+      "entfernung_km": 14.6,
+      "hoehe_m": 8092,
+      "geschwindigkeit_kmh": 751,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt"
+    },
+    {
+      "flug": "RYR32CW",
+      "typ": "B38M",
+      "entfernung_km": 14.9,
+      "hoehe_m": 10683,
+      "geschwindigkeit_kmh": 884,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt"
+    },
+    {
+      "flug": "KLC30U",
+      "typ": "E295",
+      "entfernung_km": 18.2,
+      "hoehe_m": 7315,
+      "geschwindigkeit_kmh": 637,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt"
+    }
+  ]
 }
