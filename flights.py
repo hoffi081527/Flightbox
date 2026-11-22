@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 # Rohrbach bei Eppingen (ungefaehre Ortsmitte)
 LAT = 49.14
 LON = 8.93
-RADIUS_NM = 30
+RADIUS_NM = 10.8
 
 url = f"https://api.adsb.lol/v2/point/{LAT}/{LON}/{RADIUS_NM}"
 
