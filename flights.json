@@ -1,37 +1,4 @@
 {
-  "aktualisiert": "2026-11-22T12:21:44.890335+00:00",
-  "flugzeuge": [
-    {
-      "flug": "AEE4BT",
-      "typ": "A21N",
-      "entfernung_km": 5.8,
-      "hoehe_m": 10676,
-      "geschwindigkeit_kmh": 832,
-      "status": "In der Luft"
-    },
-    {
-      "flug": "DAH2070",
-      "typ": "B737",
-      "entfernung_km": 10.6,
-      "hoehe_m": 5700,
-      "geschwindigkeit_kmh": 732,
-      "status": "In der Luft"
-    },
-    {
-      "flug": "CHX43",
-      "typ": "EC45",
-      "entfernung_km": 13.5,
-      "hoehe_m": 411,
-      "geschwindigkeit_kmh": 180,
-      "status": "In der Luft"
-    },
-    {
-      "flug": "JFA30A",
-      "typ": "PC12",
-      "entfernung_km": 14.4,
-      "hoehe_m": 7010,
-      "geschwindigkeit_kmh": 532,
-      "status": "In der Luft"
-    }
-  ]
+  "aktualisiert": "2026-11-22T12:29:19.223174+00:00",
+  "flugzeuge": []
 }
