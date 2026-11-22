@@ -1,25 +1,4 @@
 {
-  "aktualisiert": "2026-11-22T15:06:19.972830+00:00",
-  "flugzeuge": [
-    {
-      "flug": "DLA8HK",
-      "typ": "E195",
-      "entfernung_km": 11.1,
-      "hoehe_m": 7925,
-      "geschwindigkeit_kmh": 740,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt"
-    },
-    {
-      "flug": "DLH7AH",
-      "typ": "A321",
-      "entfernung_km": 15.4,
-      "hoehe_m": 5212,
-      "geschwindigkeit_kmh": 649,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt"
-    }
-  ]
+  "aktualisiert": "2026-11-22T15:47:57.709223+00:00",
+  "flugzeuge": []
 }
