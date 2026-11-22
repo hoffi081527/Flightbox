@@ -1,15 +1,4 @@
 {
-  "aktualisiert": "2026-11-22T22:11:48.265009+00:00",
-  "flugzeuge": [
-    {
-      "flug": "EZY47TW",
-      "typ": "A20N",
-      "entfernung_km": 9.2,
-      "hoehe_m": 11582,
-      "geschwindigkeit_kmh": 770,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt"
-    }
-  ]
+  "aktualisiert": "2026-11-22T22:52:19.150121+00:00",
+  "flugzeuge": []
 }
