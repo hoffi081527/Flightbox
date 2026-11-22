@@ -1,13 +1,4 @@
 {
-  "aktualisiert": "2026-11-22T11:17:31.235295+00:00",
-  "flugzeuge": [
-    {
-      "flug": "KLC1830",
-      "typ": "E75L",
-      "entfernung_km": 19.2,
-      "hoehe_m": 5281,
-      "geschwindigkeit_kmh": 639,
-      "status": "In der Luft"
-    }
-  ]
+  "aktualisiert": "2026-11-22T11:46:56.886184+00:00",
+  "flugzeuge": []
 }
