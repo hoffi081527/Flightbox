@@ -1,22 +1,12 @@
 {
-  "aktualisiert": "2026-11-22T21:27:59.780312+00:00",
+  "aktualisiert": "2026-11-22T22:11:48.265009+00:00",
   "flugzeuge": [
     {
-      "flug": "KLM65X",
-      "typ": "B738",
-      "entfernung_km": 15.2,
-      "hoehe_m": 11887,
-      "geschwindigkeit_kmh": 897,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt"
-    },
-    {
-      "flug": "TOM359",
-      "typ": "B38M",
-      "entfernung_km": 16.8,
-      "hoehe_m": 9754,
-      "geschwindigkeit_kmh": 754,
+      "flug": "EZY47TW",
+      "typ": "A20N",
+      "entfernung_km": 9.2,
+      "hoehe_m": 11582,
+      "geschwindigkeit_kmh": 770,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt"
