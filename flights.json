@@ -1,12 +1,22 @@
 {
-  "aktualisiert": "2026-11-22T14:20:08.154307+00:00",
+  "aktualisiert": "2026-11-22T15:06:19.972830+00:00",
   "flugzeuge": [
     {
-      "flug": "TKJ76Z",
-      "typ": "A21N",
-      "entfernung_km": 11.3,
-      "hoehe_m": 10691,
-      "geschwindigkeit_kmh": 891,
+      "flug": "DLA8HK",
+      "typ": "E195",
+      "entfernung_km": 11.1,
+      "hoehe_m": 7925,
+      "geschwindigkeit_kmh": 740,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt"
+    },
+    {
+      "flug": "DLH7AH",
+      "typ": "A321",
+      "entfernung_km": 15.4,
+      "hoehe_m": 5212,
+      "geschwindigkeit_kmh": 649,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt"
