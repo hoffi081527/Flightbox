@@ -1,52 +1,12 @@
 {
-  "aktualisiert": "2026-11-22T11:14:43.476350+00:00",
+  "aktualisiert": "2026-11-22T11:17:31.235295+00:00",
   "flugzeuge": [
     {
-      "flug": "PGT39JN",
-      "typ": "A21N",
-      "entfernung_km": 21.8,
-      "hoehe_m": 10973,
-      "geschwindigkeit_kmh": 763,
-      "status": "In der Luft"
-    },
-    {
-      "flug": "CMA841",
-      "typ": "B77L",
-      "entfernung_km": 33.4,
-      "hoehe_m": 10973,
-      "geschwindigkeit_kmh": 784,
-      "status": "In der Luft"
-    },
-    {
-      "flug": "DENFS",
-      "typ": "C172",
-      "entfernung_km": 39.0,
-      "hoehe_m": 671,
-      "geschwindigkeit_kmh": 161,
-      "status": "In der Luft"
-    },
-    {
-      "flug": "DLH8AV",
-      "typ": "A320",
-      "entfernung_km": 40.9,
-      "hoehe_m": 4321,
-      "geschwindigkeit_kmh": 674,
-      "status": "In der Luft"
-    },
-    {
-      "flug": "ETH719",
-      "typ": "B788",
-      "entfernung_km": 44.3,
-      "hoehe_m": 11887,
-      "geschwindigkeit_kmh": 969,
-      "status": "In der Luft"
-    },
-    {
-      "flug": "ITY403",
-      "typ": "A320",
-      "entfernung_km": 45.6,
-      "hoehe_m": 8435,
-      "geschwindigkeit_kmh": 784,
+      "flug": "KLC1830",
+      "typ": "E75L",
+      "entfernung_km": 19.2,
+      "hoehe_m": 5281,
+      "geschwindigkeit_kmh": 639,
       "status": "In der Luft"
     }
   ]
