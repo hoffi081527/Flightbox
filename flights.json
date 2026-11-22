@@ -1,28 +1,36 @@
 {
-  "aktualisiert": "2026-11-22T12:11:09.637007+00:00",
+  "aktualisiert": "2026-11-22T12:21:44.890335+00:00",
   "flugzeuge": [
     {
-      "flug": "ISR115",
-      "typ": "A320",
-      "entfernung_km": 3.3,
-      "hoehe_m": 10371,
-      "geschwindigkeit_kmh": 781,
+      "flug": "AEE4BT",
+      "typ": "A21N",
+      "entfernung_km": 5.8,
+      "hoehe_m": 10676,
+      "geschwindigkeit_kmh": 832,
       "status": "In der Luft"
     },
     {
-      "flug": "SAS584",
-      "typ": "A20N",
-      "entfernung_km": 11.8,
-      "hoehe_m": 11582,
-      "geschwindigkeit_kmh": 851,
+      "flug": "DAH2070",
+      "typ": "B737",
+      "entfernung_km": 10.6,
+      "hoehe_m": 5700,
+      "geschwindigkeit_kmh": 732,
       "status": "In der Luft"
     },
     {
-      "flug": "DEBPN",
-      "typ": "P208",
-      "entfernung_km": 12.5,
-      "hoehe_m": 671,
-      "geschwindigkeit_kmh": 173,
+      "flug": "CHX43",
+      "typ": "EC45",
+      "entfernung_km": 13.5,
+      "hoehe_m": 411,
+      "geschwindigkeit_kmh": 180,
+      "status": "In der Luft"
+    },
+    {
+      "flug": "JFA30A",
+      "typ": "PC12",
+      "entfernung_km": 14.4,
+      "hoehe_m": 7010,
+      "geschwindigkeit_kmh": 532,
       "status": "In der Luft"
     }
   ]
