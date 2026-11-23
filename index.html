@@ -28,7 +28,7 @@
     background: #243746;
     border: 1px solid #496579;
     border-radius: 10px;
-    min-height: 180px;
+    min-height: 150px;
     padding: 12px 5px;
     text-align: center;
     display: flex;
@@ -41,9 +41,12 @@
     margin-bottom: 10px;
   }
   .value {
-    font-size: 38px;
+    font-size: 34px;
     font-weight: bold;
     overflow-wrap: break-word;
+  }
+  .airport {
+    font-size: 27px;
   }
   #updated {
     text-align: center;
@@ -54,7 +57,6 @@
 </style>
 </head>
 <body>
-
 <h1>FLIGHTBOX ROHRBACH</h1>
 
 <div class="grid">
@@ -82,6 +84,14 @@
     <div class="label">STATUS</div>
     <div class="value" id="status">–</div>
   </div>
+  <div class="tile">
+    <div class="label">ABFLUGORT</div>
+    <div class="value airport" id="start">–</div>
+  </div>
+  <div class="tile">
+    <div class="label">ZIELFLUGHAFEN</div>
+    <div class="value airport" id="ziel">–</div>
+  </div>
 </div>
 
 <div id="updated">Lade Flugzeugdaten ...</div>
@@ -98,6 +108,13 @@ function zahl(wert, einheit) {
   var n = Number(wert);
   if (isNaN(n)) return "–";
   return Math.round(n).toLocaleString("de-DE") + " " + einheit;
+}
+
+function ort(wert) {
+  if (!wert || wert === "Unbekannt") {
+    return "Unbekannt";
+  }
+  return String(wert);
 }
 
 function laden() {
@@ -127,6 +144,8 @@ function laden() {
         anzeigen("entfernung", "–");
         anzeigen("tempo", "–");
         anzeigen("status", "–");
+        anzeigen("start", "–");
+        anzeigen("ziel", "–");
       } else {
         var f = flugzeuge[0];
 
@@ -136,10 +155,15 @@ function laden() {
         anzeigen("entfernung", zahl(f.entfernung_km, "km"));
         anzeigen("tempo", zahl(f.geschwindigkeit_kmh, "km/h"));
         anzeigen("status", f.status || "Unbekannt");
+
+        anzeigen("start", ort(f.start));
+        anzeigen("ziel", ort(f.ziel));
       }
 
-      anzeigen("updated", "Letzte Datenaktualisierung: " +
-        (daten.aktualisiert || "Unbekannt"));
+      anzeigen("updated",
+        "Letzte Datenaktualisierung: " +
+        (daten.aktualisiert || "Unbekannt")
+      );
 
     } catch (e) {
       anzeigen("updated", "Fehler beim Lesen der Daten");
@@ -152,7 +176,7 @@ function laden() {
 laden();
 setInterval(laden, 60000);
 </script>
-
 </body>
 </html>
+
 
