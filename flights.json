@@ -1,22 +1,22 @@
 {
-  "aktualisiert": "2026-11-23T11:31:48.387318+00:00",
+  "aktualisiert": "2026-11-23T12:32:22.093340+00:00",
   "flugzeuge": [
     {
-      "flug": "RYR3SJ",
-      "typ": "B738",
-      "entfernung_km": 9.3,
+      "flug": "WUK495",
+      "typ": "A21N",
+      "entfernung_km": 8.4,
       "hoehe_m": 11582,
-      "geschwindigkeit_kmh": 730,
+      "geschwindigkeit_kmh": 734,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt"
     },
     {
-      "flug": "CFG6AH",
-      "typ": "A320",
-      "entfernung_km": 19.0,
-      "hoehe_m": 6706,
-      "geschwindigkeit_kmh": 688,
+      "flug": "RYR810T",
+      "typ": "B38M",
+      "entfernung_km": 18.2,
+      "hoehe_m": 11278,
+      "geschwindigkeit_kmh": 889,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt"
