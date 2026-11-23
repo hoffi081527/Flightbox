@@ -1,22 +1,52 @@
 {
-  "aktualisiert": "2026-11-23T13:55:42.667792+00:00",
+  "aktualisiert": "2026-11-23T14:51:25.091445+00:00",
   "flugzeuge": [
     {
-      "flug": "DMFGK",
-      "typ": "Unbekannt",
-      "entfernung_km": 14.5,
-      "hoehe_m": 1478,
-      "geschwindigkeit_kmh": 199,
+      "flug": "DEEWD",
+      "typ": "BE33",
+      "entfernung_km": 4.8,
+      "hoehe_m": 815,
+      "geschwindigkeit_kmh": 339,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt"
     },
     {
-      "flug": "DLH73A",
-      "typ": "A21N",
-      "entfernung_km": 16.7,
-      "hoehe_m": 6713,
-      "geschwindigkeit_kmh": 656,
+      "flug": "DIFEF",
+      "typ": "DA62",
+      "entfernung_km": 14.0,
+      "hoehe_m": 1692,
+      "geschwindigkeit_kmh": 241,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt"
+    },
+    {
+      "flug": "DHTAS",
+      "typ": "Unbekannt",
+      "entfernung_km": 16.3,
+      "hoehe_m": 792,
+      "geschwindigkeit_kmh": 189,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt"
+    },
+    {
+      "flug": "DLA301",
+      "typ": "E195",
+      "entfernung_km": 17.2,
+      "hoehe_m": 4435,
+      "geschwindigkeit_kmh": 539,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt"
+    },
+    {
+      "flug": "DEFUI",
+      "typ": "C152",
+      "entfernung_km": 18.0,
+      "hoehe_m": 846,
+      "geschwindigkeit_kmh": 163,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt"
