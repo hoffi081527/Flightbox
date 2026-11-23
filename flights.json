@@ -1,4 +1,25 @@
 {
-  "aktualisiert": "2026-11-23T22:02:15.855799+00:00",
-  "flugzeuge": []
+  "aktualisiert": "2026-11-23T22:52:43.339151+00:00",
+  "flugzeuge": [
+    {
+      "flug": "FDX6917",
+      "typ": "B763",
+      "entfernung_km": 10.8,
+      "hoehe_m": 10371,
+      "geschwindigkeit_kmh": 729,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt"
+    },
+    {
+      "flug": "EZY58DM",
+      "typ": "A20N",
+      "entfernung_km": 15.8,
+      "hoehe_m": 11582,
+      "geschwindigkeit_kmh": 722,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt"
+    }
+  ]
 }
