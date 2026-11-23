@@ -207,8 +207,10 @@ anzeigen("airline", airlines[rufzeichen.substring(0, 3)] || "Unbekannte Airline"
       }
 
       anzeigen("status", status);
-      anzeigen("start", "Unbekannt");
-      anzeigen("ziel", "Unbekannt");
+     
+anzeigen("start", f.startstadt || "Unbekannt");
+anzeigen("ziel", f.zielstadt || "Unbekannt");
+
     }
 
     anzeigen("updated",
