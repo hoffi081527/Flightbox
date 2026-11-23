@@ -1,32 +1,22 @@
 {
-  "aktualisiert": "2026-11-23T10:42:49.019336+00:00",
+  "aktualisiert": "2026-11-23T11:31:48.387318+00:00",
   "flugzeuge": [
     {
-      "flug": "SVA123",
-      "typ": "B78X",
-      "entfernung_km": 4.4,
+      "flug": "RYR3SJ",
+      "typ": "B738",
+      "entfernung_km": 9.3,
       "hoehe_m": 11582,
-      "geschwindigkeit_kmh": 817,
+      "geschwindigkeit_kmh": 730,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt"
     },
     {
-      "flug": "SVW55ND",
-      "typ": "PC24",
-      "entfernung_km": 9.8,
-      "hoehe_m": 7308,
-      "geschwindigkeit_kmh": 660,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt"
-    },
-    {
-      "flug": "QTR30C",
-      "typ": "A359",
-      "entfernung_km": 16.4,
-      "hoehe_m": 11887,
-      "geschwindigkeit_kmh": 995,
+      "flug": "CFG6AH",
+      "typ": "A320",
+      "entfernung_km": 19.0,
+      "hoehe_m": 6706,
+      "geschwindigkeit_kmh": 688,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt"
