@@ -46,9 +46,11 @@ def route_abfragen(flugnummer, lat, lon):
         method="POST"
     )
 
-    try:
-        with urllib.request.urlopen(request, timeout=15) as response:
-            daten = json.load(response)
+    with urllib.request.urlopen(request, timeout=15) as response:
+    antwort = response.read().decode("utf-8", errors="replace")
+    print("Routen-HTTP-Status:", response.status)
+    print("Routen-Antwort:", repr(antwort[:300]))
+    daten = json.loads(antwort)
 
         if not isinstance(daten, list) or not daten:
             return "Unbekannt", "Unbekannt"
