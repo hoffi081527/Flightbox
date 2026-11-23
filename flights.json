@@ -1,12 +1,12 @@
 {
-  "aktualisiert": "2026-11-23T15:42:51.510463+00:00",
+  "aktualisiert": "2026-11-23T15:50:48.449765+00:00",
   "flugzeuge": [
     {
-      "flug": "DKKAO",
-      "typ": "RF4",
-      "entfernung_km": 17.1,
-      "hoehe_m": 792,
-      "geschwindigkeit_kmh": 206,
+      "flug": "EWG18P",
+      "typ": "A320",
+      "entfernung_km": 5.8,
+      "hoehe_m": 11887,
+      "geschwindigkeit_kmh": 902,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt"
