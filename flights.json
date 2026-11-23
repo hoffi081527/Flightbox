@@ -1,22 +1,22 @@
 {
-  "aktualisiert": "2026-11-23T12:32:22.093340+00:00",
+  "aktualisiert": "2026-11-23T13:55:42.667792+00:00",
   "flugzeuge": [
     {
-      "flug": "WUK495",
-      "typ": "A21N",
-      "entfernung_km": 8.4,
-      "hoehe_m": 11582,
-      "geschwindigkeit_kmh": 734,
+      "flug": "DMFGK",
+      "typ": "Unbekannt",
+      "entfernung_km": 14.5,
+      "hoehe_m": 1478,
+      "geschwindigkeit_kmh": 199,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt"
     },
     {
-      "flug": "RYR810T",
-      "typ": "B38M",
-      "entfernung_km": 18.2,
-      "hoehe_m": 11278,
-      "geschwindigkeit_kmh": 889,
+      "flug": "DLH73A",
+      "typ": "A21N",
+      "entfernung_km": 16.7,
+      "hoehe_m": 6713,
+      "geschwindigkeit_kmh": 656,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt"
