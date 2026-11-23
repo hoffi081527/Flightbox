@@ -1,32 +1,12 @@
 {
-  "aktualisiert": "2026-11-23T06:51:44.267435+00:00",
+  "aktualisiert": "2026-11-23T08:16:24.624340+00:00",
   "flugzeuge": [
     {
-      "flug": "EJU64XU",
+      "flug": "EWG4JR",
       "typ": "A319",
-      "entfernung_km": 7.5,
-      "hoehe_m": 5540,
-      "geschwindigkeit_kmh": 591,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt"
-    },
-    {
-      "flug": "KLM1601",
-      "typ": "A21N",
-      "entfernung_km": 14.8,
-      "hoehe_m": 11270,
-      "geschwindigkeit_kmh": 920,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt"
-    },
-    {
-      "flug": "WZZ231",
-      "typ": "A21N",
-      "entfernung_km": 18.9,
-      "hoehe_m": 7628,
-      "geschwindigkeit_kmh": 692,
+      "entfernung_km": 14.4,
+      "hoehe_m": 2667,
+      "geschwindigkeit_kmh": 529,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt"
