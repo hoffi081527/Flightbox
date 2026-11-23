@@ -62,7 +62,8 @@
 <div class="grid">
   <div class="tile">
     <div class="label">FLUGNUMMER</div>
-    <div class="value" id="flug">–</div>
+<div class="value" id="flug">–</div>
+<div id="airline" style="font-size:16px; margin-top:8px; color:#aaa;">–</div>
   </div>
   <div class="tile">
     <div class="label">FLUGZEUGTYP</div>
@@ -141,6 +142,9 @@ xhr.onreadystatechange = function() {
 
     if (flugzeuge.length === 0) {
       anzeigen("flug", "Kein Flugzeug");
+     
+anzeigen("airline", "–");
+
       anzeigen("typ", "–");
       anzeigen("hoehe", "–");
       anzeigen("entfernung", "–");
@@ -152,6 +156,29 @@ xhr.onreadystatechange = function() {
       var f = flugzeuge[0];
 
       anzeigen("flug", (f.flight || "Unbekannt").trim());
+     
+var rufzeichen = (f.flight || "").trim().toUpperCase();
+var airlines = {
+  "DLH": "Lufthansa",
+  "CFG": "Condor",
+  "EWG": "Eurowings",
+  "RYR": "Ryanair",
+  "EZY": "easyJet",
+  "EJU": "easyJet Europe",
+  "SWR": "SWISS",
+  "AUA": "Austrian Airlines",
+  "THY": "Turkish Airlines",
+  "KLM": "KLM",
+  "AFR": "Air France",
+  "BAW": "British Airways",
+  "UAE": "Emirates",
+  "QTR": "Qatar Airways",
+  "SIA": "Singapore Airlines",
+  "UAL": "United Airlines",
+  "DAL": "Delta Air Lines"
+};
+anzeigen("airline", airlines[rufzeichen.substring(0, 3)] || "Unbekannte Airline");
+
       anzeigen("typ", f.t || "Unbekannt");
 
       anzeigen("hoehe",
