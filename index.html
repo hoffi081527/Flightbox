@@ -119,62 +119,85 @@ function ort(wert) {
 
 function laden() {
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "flights.json?t=" + new Date().getTime(), true);
+ 
+xhr.open("GET", "https://flightbox-rohrbach.hoffi081527.workers.dev/?t=" + new Date().getTime(), true);
 
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState !== 4) return;
 
-    if (xhr.status !== 200) {
-      anzeigen("updated", "Datenabruf fehlgeschlagen");
-      return;
-    }
 
-    try {
-      var daten = JSON.parse(xhr.responseText);
-      var flugzeuge = daten.flugzeuge || [];
+xhr.onreadystatechange = function() {
+  if (xhr.readyState !== 4) return;
+  if (xhr.status !== 200) {
+    anzeigen("updated", "Datenabruf fehlgeschlagen");
+    return;
+  }
 
-      flugzeuge.sort(function(a, b) {
-        return Number(a.entfernung_km) - Number(b.entfernung_km);
-      });
+  try {
+    var daten = JSON.parse(xhr.responseText);
+    var flugzeuge = daten.ac || [];
 
-      if (flugzeuge.length === 0) {
-        anzeigen("flug", "Kein Flugzeug");
-        anzeigen("typ", "–");
-        anzeigen("hoehe", "–");
-        anzeigen("entfernung", "–");
-        anzeigen("tempo", "–");
-        anzeigen("status", "–");
-        anzeigen("start", "–");
-        anzeigen("ziel", "–");
-      } else {
-        var f = flugzeuge[0];
+    flugzeuge.sort(function(a, b) {
+      return Number(a.dst || 9999) - Number(b.dst || 9999);
+    });
 
-        anzeigen("flug", f.flug || "Unbekannt");
-        anzeigen("typ", f.typ || "Unbekannt");
-        anzeigen("hoehe", zahl(f.hoehe_m, "m"));
-        anzeigen("entfernung", zahl(f.entfernung_km, "km"));
-        anzeigen("tempo", zahl(f.geschwindigkeit_kmh, "km/h"));
-        anzeigen("status", f.status || "Unbekannt");
+    if (flugzeuge.length === 0) {
+      anzeigen("flug", "Kein Flugzeug");
+      anzeigen("typ", "–");
+      anzeigen("hoehe", "–");
+      anzeigen("entfernung", "–");
+      anzeigen("tempo", "–");
+      anzeigen("status", "–");
+      anzeigen("start", "–");
+      anzeigen("ziel", "–");
+    } else {
+      var f = flugzeuge[0];
 
-        anzeigen("start", ort(f.start));
-        anzeigen("ziel", ort(f.ziel));
+      anzeigen("flug", (f.flight || "Unbekannt").trim());
+      anzeigen("typ", f.t || "Unbekannt");
+
+      anzeigen("hoehe",
+        f.alt_baro != null && typeof f.alt_baro === "number"
+          ? Math.round(f.alt_baro * 0.3048) + " m"
+          : "Unbekannt");
+
+      anzeigen("entfernung",
+        f.dst != null
+          ? (f.dst * 1.852).toFixed(1) + " km"
+          : "Unbekannt");
+
+      anzeigen("tempo",
+        f.gs != null
+          ? Math.round(f.gs * 1.852) + " km/h"
+          : "Unbekannt");
+
+      var rate = f.baro_rate;
+      var status = "Unbekannt";
+
+      if (typeof rate === "number") {
+        if (rate > 100) status = "Steigt";
+        else if (rate < -100) status = "Sinkt";
+        else status = "Horizontalflug";
       }
 
-      anzeigen("updated",
-        "Letzte Datenaktualisierung: " +
-        (daten.aktualisiert || "Unbekannt")
-      );
-
-    } catch (e) {
-      anzeigen("updated", "Fehler beim Lesen der Daten");
+      anzeigen("status", status);
+      anzeigen("start", "Unbekannt");
+      anzeigen("ziel", "Unbekannt");
     }
-  };
 
-  xhr.send();
+    anzeigen("updated",
+      "Letzte Datenaktualisierung: " +
+      new Date(daten.now || Date.now()).toLocaleTimeString("de-DE")
+    );
+
+  } catch (e) {
+    anzeigen("updated", "Fehler beim Lesen der Daten");
+  }
+};
+xhr.send();
+
 }
 
 laden();
-setInterval(laden, 60000);
+setInterval(laden, 30000);
 </script>
 </body>
 </html>
