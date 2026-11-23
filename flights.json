@@ -1,12 +1,22 @@
 {
-  "aktualisiert": "2026-11-23T17:37:15.449239+00:00",
+  "aktualisiert": "2026-11-23T18:29:19.749061+00:00",
   "flugzeuge": [
     {
-      "flug": "DLH8CF",
-      "typ": "E190",
-      "entfernung_km": 7.3,
-      "hoehe_m": 5105,
-      "geschwindigkeit_kmh": 541,
+      "flug": "DLH03C",
+      "typ": "A21N",
+      "entfernung_km": 17.9,
+      "hoehe_m": 6477,
+      "geschwindigkeit_kmh": 633,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt"
+    },
+    {
+      "flug": "UAE34E",
+      "typ": "B77W",
+      "entfernung_km": 19.7,
+      "hoehe_m": 9144,
+      "geschwindigkeit_kmh": 801,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt"
