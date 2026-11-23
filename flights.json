@@ -1,12 +1,12 @@
 {
-  "aktualisiert": "2026-11-23T08:16:24.624340+00:00",
+  "aktualisiert": "2026-11-23T09:40:38.076414+00:00",
   "flugzeuge": [
     {
-      "flug": "EWG4JR",
-      "typ": "A319",
-      "entfernung_km": 14.4,
-      "hoehe_m": 2667,
-      "geschwindigkeit_kmh": 529,
+      "flug": "KLM85A",
+      "typ": "B738",
+      "entfernung_km": 14.5,
+      "hoehe_m": 11887,
+      "geschwindigkeit_kmh": 925,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt"
