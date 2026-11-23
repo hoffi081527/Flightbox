@@ -1,15 +1,4 @@
 {
-  "aktualisiert": "2026-11-23T15:51:21.795266+00:00",
-  "flugzeuge": [
-    {
-      "flug": "EWG18P",
-      "typ": "A320",
-      "entfernung_km": 12.9,
-      "hoehe_m": 11887,
-      "geschwindigkeit_kmh": 902,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt"
-    }
-  ]
+  "aktualisiert": "2026-11-23T15:57:23.479292+00:00",
+  "flugzeuge": []
 }
