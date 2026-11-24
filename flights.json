@@ -1,35 +1,4 @@
 {
-  "aktualisiert": "2026-11-24T14:49:54.807867+00:00",
-  "flugzeuge": [
-    {
-      "flug": "KLM57B",
-      "typ": "E295",
-      "hex": "4863dc",
-      "registrierung": "PH-NXD",
-      "entfernung_km": 6.9,
-      "hoehe_m": 11887,
-      "geschwindigkeit_kmh": 908,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt",
-      "foto": "",
-      "fotograf": "",
-      "foto_link": ""
-    },
-    {
-      "flug": "RAM810D",
-      "typ": "Unbekannt",
-      "hex": "0201d4",
-      "registrierung": "",
-      "entfernung_km": 18.4,
-      "hoehe_m": 5852,
-      "geschwindigkeit_kmh": 678,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt",
-      "foto": "",
-      "fotograf": "",
-      "foto_link": ""
-    }
-  ]
+  "aktualisiert": "2026-11-24T15:51:13.376643+00:00",
+  "flugzeuge": []
 }
