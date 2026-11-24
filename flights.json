@@ -1,20 +1,4 @@
 {
-  "aktualisiert": "2026-11-24T11:37:28.915168+00:00",
-  "flugzeuge": [
-    {
-      "flug": "DEBRL",
-      "typ": "BR23",
-      "hex": "3d0911",
-      "registrierung": "D-EBRL",
-      "entfernung_km": 4.6,
-      "hoehe_m": 1288,
-      "geschwindigkeit_kmh": 205,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt",
-      "foto": "",
-      "fotograf": "",
-      "foto_link": ""
-    }
-  ]
+  "aktualisiert": "2026-11-24T12:38:50.548687+00:00",
+  "flugzeuge": []
 }
