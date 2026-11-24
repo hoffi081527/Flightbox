@@ -1,15 +1,4 @@
 {
-  "aktualisiert": "2026-11-23T23:36:17.821286+00:00",
-  "flugzeuge": [
-    {
-      "flug": "EZY72LD",
-      "typ": "A20N",
-      "entfernung_km": 16.4,
-      "hoehe_m": 11582,
-      "geschwindigkeit_kmh": 697,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt"
-    }
-  ]
+  "aktualisiert": "2026-11-24T00:25:59.719202+00:00",
+  "flugzeuge": []
 }
