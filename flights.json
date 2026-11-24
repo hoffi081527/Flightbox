@@ -1,4 +1,35 @@
 {
-  "aktualisiert": "2026-11-24T12:38:50.548687+00:00",
-  "flugzeuge": []
+  "aktualisiert": "2026-11-24T13:56:49.458567+00:00",
+  "flugzeuge": [
+    {
+      "flug": "VLG76EN",
+      "typ": "A321",
+      "hex": "345249",
+      "registrierung": "EC-MMU",
+      "entfernung_km": 11.0,
+      "hoehe_m": 10363,
+      "geschwindigkeit_kmh": 818,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    },
+    {
+      "flug": "RYR90BX",
+      "typ": "B38M",
+      "hex": "4cadc3",
+      "registrierung": "EI-IGF",
+      "entfernung_km": 13.3,
+      "hoehe_m": 10676,
+      "geschwindigkeit_kmh": 711,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    }
+  ]
 }
