@@ -1,4 +1,35 @@
 {
-  "aktualisiert": "2026-11-24T08:53:44.091112+00:00",
-  "flugzeuge": []
+  "aktualisiert": "2026-11-24T09:53:36.875337+00:00",
+  "flugzeuge": [
+    {
+      "flug": "DHIQS",
+      "typ": "Unbekannt",
+      "hex": "3de972",
+      "registrierung": "",
+      "entfernung_km": 10.0,
+      "hoehe_m": 533,
+      "geschwindigkeit_kmh": 235,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    },
+    {
+      "flug": "DEZMD",
+      "typ": "Unbekannt",
+      "hex": "3d47e7",
+      "registrierung": "",
+      "entfernung_km": 16.5,
+      "hoehe_m": 2591,
+      "geschwindigkeit_kmh": 244,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    }
+  ]
 }
