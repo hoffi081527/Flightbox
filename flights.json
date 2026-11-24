@@ -1,35 +1,4 @@
 {
-  "aktualisiert": "2026-11-24T06:32:41.902981+00:00",
-  "flugzeuge": [
-    {
-      "flug": "RXI401",
-      "typ": "Unbekannt",
-      "hex": "716fff",
-      "registrierung": "",
-      "entfernung_km": 7.4,
-      "hoehe_m": 11582,
-      "geschwindigkeit_kmh": 761,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt",
-      "foto": "",
-      "fotograf": "",
-      "foto_link": ""
-    },
-    {
-      "flug": "DLH5EE",
-      "typ": "E190",
-      "hex": "3009b6",
-      "registrierung": "I-JENH",
-      "entfernung_km": 15.4,
-      "hoehe_m": 5311,
-      "geschwindigkeit_kmh": 664,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt",
-      "foto": "",
-      "fotograf": "",
-      "foto_link": ""
-    }
-  ]
+  "aktualisiert": "2026-11-24T07:56:33.054953+00:00",
+  "flugzeuge": []
 }
