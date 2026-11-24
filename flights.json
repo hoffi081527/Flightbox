@@ -1,20 +1,4 @@
 {
-  "aktualisiert": "2026-11-24T19:30:07.135895+00:00",
-  "flugzeuge": [
-    {
-      "flug": "CFG9KL",
-      "typ": "A20N",
-      "hex": "3c7878",
-      "registrierung": "D-ANCX",
-      "entfernung_km": 14.6,
-      "hoehe_m": 6690,
-      "geschwindigkeit_kmh": 719,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt",
-      "foto": "",
-      "fotograf": "",
-      "foto_link": ""
-    }
-  ]
+  "aktualisiert": "2026-11-24T20:23:19.675076+00:00",
+  "flugzeuge": []
 }
