@@ -1,4 +1,50 @@
 {
-  "aktualisiert": "2026-11-24T15:51:13.376643+00:00",
-  "flugzeuge": []
+  "aktualisiert": "2026-11-24T16:51:37.574091+00:00",
+  "flugzeuge": [
+    {
+      "flug": "CFG9VJ",
+      "typ": "E190",
+      "hex": "3c6917",
+      "registrierung": "D-AJHW",
+      "entfernung_km": 15.0,
+      "hoehe_m": 6332,
+      "geschwindigkeit_kmh": 652,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    },
+    {
+      "flug": "DEZOF",
+      "typ": "P28A",
+      "hex": "3d481d",
+      "registrierung": "D-EZOF",
+      "entfernung_km": 16.5,
+      "hoehe_m": 907,
+      "geschwindigkeit_kmh": 154,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    },
+    {
+      "flug": "DINNA",
+      "typ": "BE9L",
+      "hex": "3e3aee",
+      "registrierung": "D-INNA",
+      "entfernung_km": 17.7,
+      "hoehe_m": 1448,
+      "geschwindigkeit_kmh": 457,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    }
+  ]
 }
