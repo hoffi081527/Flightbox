@@ -1,6 +1,7 @@
 
 import json
 import math
+import re
 import urllib.request
 from datetime import datetime, timezone
 
@@ -13,6 +14,7 @@ FLUG_URL = (
     f"https://api.adsb.lol/v2/point/{LAT}/{LON}/{RADIUS_NM}"
 )
 ROUTEN_URL = "https://api.adsb.lol/api/0/routeset"
+FOTO_URL = "https://api.planespotters.net/pub/photos/hex/"
 
 
 def entfernung_km(lat, lon):
@@ -24,6 +26,46 @@ def entfernung_km(lat, lon):
         * math.sin(math.radians(lon - LON) / 2) ** 2
     )
     return 2 * r * math.asin(math.sqrt(a))
+
+
+def foto_abfragen(hexcode):
+    if not re.fullmatch(r"[0-9a-fA-F]{6}", hexcode or ""):
+        return "", "", ""
+
+    try:
+        request = urllib.request.Request(
+            FOTO_URL + hexcode,
+            headers={
+                "User-Agent": "RohrbachFlightBox/1.0",
+                "Accept": "application/json"
+            }
+        )
+
+        with urllib.request.urlopen(
+            request, timeout=15
+        ) as response:
+            daten = json.load(response)
+
+        fotos = daten.get("photos") or []
+
+        for foto in fotos:
+            bild = (
+                (foto.get("thumbnail_large") or {}).get("src")
+                or (foto.get("thumbnail") or {}).get("src")
+                or ""
+            )
+
+            fotograf = foto.get("photographer") or ""
+            link = foto.get("link") or ""
+
+            if bild.startswith("https://") and link.startswith("https://") and fotograf:
+                print("Flugzeugfoto gefunden:", hexcode)
+                return bild, fotograf, link
+
+    except Exception as fehler:
+        print("Fotoabfrage fehlgeschlagen:", fehler)
+
+    return "", "", ""
 
 
 def route_abfragen(flugnummer, lat, lon):
@@ -59,9 +101,6 @@ def route_abfragen(flugnummer, lat, lon):
             print("Routen-Antwort:", repr(antwort[:300]))
 
             if not antwort.strip():
-                print(
-                    "Routenabfrage: Server liefert keine Daten"
-                )
                 return "Unbekannt", "Unbekannt"
 
             daten = json.loads(antwort)
@@ -132,6 +171,8 @@ for flugzeug in daten.get("ac", []):
             or "Unbekannt"
         ),
         "typ": flugzeug.get("t") or "Unbekannt",
+        "hex": flugzeug.get("hex") or "",
+        "registrierung": flugzeug.get("r") or "",
         "entfernung_km": round(
             entfernung_km(lat, lon), 1
         ),
@@ -152,6 +193,9 @@ for flugzeug in daten.get("ac", []):
         ),
         "start": "Unbekannt",
         "ziel": "Unbekannt",
+        "foto": "",
+        "fotograf": "",
+        "foto_link": "",
         "_lat": lat,
         "_lon": lon
     })
@@ -162,7 +206,7 @@ flugzeuge.sort(
 
 flugzeuge = flugzeuge[:6]
 
-# Route nur fuer das naechste Flugzeug ermitteln
+# Route und Foto des naechsten Flugzeugs
 if flugzeuge:
     naechstes = flugzeuge[0]
 
@@ -174,6 +218,14 @@ if flugzeuge:
 
     naechstes["start"] = start
     naechstes["ziel"] = ziel
+
+    foto, fotograf, foto_link = foto_abfragen(
+        naechstes["hex"]
+    )
+
+    naechstes["foto"] = foto
+    naechstes["fotograf"] = fotograf
+    naechstes["foto_link"] = foto_link
 
 # Interne Koordinaten entfernen
 for flugzeug in flugzeuge:
@@ -202,5 +254,6 @@ print(f"{len(flugzeuge)} Flugzeuge gespeichert.")
 if flugzeuge:
     print("Start:", flugzeuge[0]["start"])
     print("Ziel:", flugzeuge[0]["ziel"])
-
+    print("Registrierung:", flugzeuge[0]["registrierung"])
+    print("Foto:", flugzeuge[0]["foto"] or "Kein Foto gefunden")
 
