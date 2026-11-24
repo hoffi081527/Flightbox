@@ -5,8 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Flightbox Rohrbach</title>
+
 <style>
-  * { box-sizing: border-box; }
+  * {
+    box-sizing: border-box;
+  }
+
   body {
     margin: 0;
     padding: 12px;
@@ -14,152 +18,170 @@
     color: white;
     font-family: Arial, sans-serif;
   }
+
   h1 {
     margin: 0 0 10px;
-    font-size: 30px;
+    font-size: clamp(20px, 3vw, 36px);
     text-align: center;
   }
+
   .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 10px;
   }
+
   .tile {
     background: #243746;
     border: 1px solid #496579;
     border-radius: 10px;
-    min-height: 150px;
+    min-height: clamp(100px, 25vh, 280px);
+    min-width: 0;
     padding: 12px 5px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
+
   .label {
-    font-size: 20px;
+    font-size: clamp(11px, 2vw, 24px);
     color: #b5cad9;
     margin-bottom: 10px;
   }
+
   .value {
-    font-size: 34px;
+    font-size: clamp(18px, 3.5vw, 48px);
     font-weight: bold;
     overflow-wrap: break-word;
   }
+
   .airport {
-    font-size: 27px;
+    font-size: clamp(15px, 2.8vw, 36px);
   }
+
+  #airline {
+    font-size: clamp(12px, 2vw, 24px);
+    margin-top: 8px;
+    color: #aaa;
+  }
+
+  #foto {
+    width: 100%;
+    max-height: 19vh;
+    object-fit: contain;
+    border-radius: 6px;
+  }
+
+  #fotograf {
+    font-size: 10px;
+    color: #b5cad9;
+    margin-top: 4px;
+  }
+
+  #foto_hinweis {
+    font-size: 16px;
+    color: #b5cad9;
+  }
+
   #updated {
     text-align: center;
     color: #b5cad9;
     margin-top: 12px;
     font-size: 13px;
   }
+
+  @media (max-width: 600px) and (orientation: portrait) {
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .photo-tile {
+      grid-column: span 2;
+    }
+
+    #foto {
+      max-height: 30vh;
+    }
+  }
 </style>
 </head>
+
 <body>
+
 <h1>FLIGHTBOX ROHRBACH</h1>
 
 <div class="grid">
+
   <div class="tile">
     <div class="label">FLUGNUMMER</div>
-<div class="value" id="flug">–</div>
-<div id="airline" style="font-size:20px; margin-top:8px; color:#aaa;">–</div>
+    <div class="value" id="flug">–</div>
+    <div id="airline">–</div>
   </div>
+
   <div class="tile">
     <div class="label">FLUGZEUGTYP</div>
     <div class="value" id="typ">–</div>
   </div>
+
   <div class="tile">
     <div class="label">FLUGHÖHE</div>
     <div class="value" id="hoehe">–</div>
   </div>
+
   <div class="tile">
     <div class="label">ENTFERNUNG</div>
     <div class="value" id="entfernung">–</div>
   </div>
+
   <div class="tile">
     <div class="label">GESCHWINDIGKEIT</div>
     <div class="value" id="tempo">–</div>
   </div>
+
   <div class="tile">
     <div class="label">STATUS</div>
     <div class="value" id="status">–</div>
   </div>
+
   <div class="tile">
     <div class="label">ABFLUGORT</div>
     <div class="value airport" id="start">–</div>
   </div>
+
   <div class="tile">
     <div class="label">ZIELFLUGHAFEN</div>
     <div class="value airport" id="ziel">–</div>
   </div>
+
+  <div class="tile photo-tile">
+    <div class="label">FLUGZEUGFOTO</div>
+
+    <a id="foto_link"
+       target="_blank"
+       rel="noopener noreferrer">
+
+      <img id="foto"
+           alt="Flugzeugfoto"
+           style="display:none;">
+
+    </a>
+
+    <div id="foto_hinweis">
+      Kein Foto verfügbar
+    </div>
+
+    <div id="fotograf"></div>
+  </div>
+
 </div>
 
 <div id="updated">Lade Flugzeugdaten ...</div>
 
 <script>
-function anzeigen(id, wert) {
-  document.getElementById(id).textContent = wert;
-}
 
-function zahl(wert, einheit) {
-  if (wert === null || wert === undefined || wert === "") {
-    return "–";
-  }
-  var n = Number(wert);
-  if (isNaN(n)) return "–";
-  return Math.round(n).toLocaleString("de-DE") + " " + einheit;
-}
-
-function ort(wert) {
-  if (!wert || wert === "Unbekannt") {
-    return "Unbekannt";
-  }
-  return String(wert);
-}
-
-function laden() {
-  var xhr = new XMLHttpRequest();
- 
-xhr.open("GET", "https://flightbox-rohrbach.hoffi081527.workers.dev/?t=" + new Date().getTime(), true);
-
-
-
-xhr.onreadystatechange = function() {
-  if (xhr.readyState !== 4) return;
-  if (xhr.status !== 200) {
-    anzeigen("updated", "Datenabruf fehlgeschlagen");
-    return;
-  }
-
-  try {
-    var daten = JSON.parse(xhr.responseText);
-    var flugzeuge = daten.ac || [];
-
-    flugzeuge.sort(function(a, b) {
-      return Number(a.dst || 9999) - Number(b.dst || 9999);
-    });
-
-    if (flugzeuge.length === 0) {
-      anzeigen("flug", "Kein Flugzeug");
-     
-anzeigen("airline", "–");
-
-      anzeigen("typ", "–");
-      anzeigen("hoehe", "–");
-      anzeigen("entfernung", "–");
-      anzeigen("tempo", "–");
-      anzeigen("status", "–");
-      anzeigen("start", "–");
-      anzeigen("ziel", "–");
-    } else {
-      var f = flugzeuge[0];
-
-      anzeigen("flug", (f.flight || "Unbekannt").trim());
-     
-var rufzeichen = (f.flight || "").trim().toUpperCase();
 var airlines = {
-      DLH: "Lufthansa",
+    DLH: "Lufthansa",
     GEC: "Lufthansa Cargo",
     LHX: "Lufthansa City Airlines",
     CLH: "Lufthansa CityLine",
@@ -308,58 +330,252 @@ var airlines = {
     AMX: "Aeromexico",
     ARG: "Aerolineas Argentinas"
 };
-anzeigen("airline", airlines[rufzeichen.substring(0, 3)] || "Unbekannte Airline");
 
-      anzeigen("typ", f.t || "Unbekannt");
+function anzeigen(id, wert) {
+  document.getElementById(id).textContent = wert;
+}
 
-      anzeigen("hoehe",
-        f.alt_baro != null && typeof f.alt_baro === "number"
-          ? Math.round(f.alt_baro * 0.3048) + " m"
-          : "Unbekannt");
 
-      anzeigen("entfernung",
-        f.dst != null
-          ? (f.dst * 1.852).toFixed(1) + " km"
-          : "Unbekannt");
+// Flugzeugfoto anzeigen
 
-      anzeigen("tempo",
-        f.gs != null
-          ? Math.round(f.gs * 1.852) + " km/h"
-          : "Unbekannt");
+function fotoAnzeigen(f) {
 
-      var rate = f.baro_rate;
-      var status = "Unbekannt";
+  var bild = document.getElementById("foto");
+  var link = document.getElementById("foto_link");
+  var hinweis = document.getElementById("foto_hinweis");
 
-      if (typeof rate === "number") {
-        if (rate > 100) status = "Steigt";
-        else if (rate < -100) status = "Sinkt";
-        else status = "Horizontalflug";
+  function keinFoto() {
+    bild.style.display = "none";
+    bild.removeAttribute("src");
+    link.removeAttribute("href");
+    hinweis.style.display = "block";
+    hinweis.textContent = "Kein Foto verfügbar";
+    anzeigen("fotograf", "");
+  }
+
+  if (!f || !f.foto ||
+      !f.foto.startsWith("https://")) {
+    keinFoto();
+    return;
+  }
+
+  bild.onload = function() {
+    bild.style.display = "block";
+    hinweis.style.display = "none";
+  };
+
+  bild.onerror = function() {
+    keinFoto();
+  };
+
+  if (f.foto_link &&
+      f.foto_link.startsWith("https://")) {
+    link.href = f.foto_link;
+  } else {
+    link.removeAttribute("href");
+  }
+
+  anzeigen(
+    "fotograf",
+    f.fotograf
+      ? "© " + f.fotograf + " / Planespotters.net"
+      : "Planespotters.net"
+  );
+
+  if (bild.getAttribute("src") !== f.foto) {
+    bild.style.display = "none";
+    hinweis.style.display = "block";
+    hinweis.textContent = "Lade Flugzeugfoto ...";
+    bild.src = f.foto;
+  } else if (bild.complete && bild.naturalWidth > 0) {
+    bild.style.display = "block";
+    hinweis.style.display = "none";
+  }
+}
+
+
+// Anzeige ohne Flugzeug
+
+function keinFlugzeug() {
+  anzeigen("flug", "Kein Flugzeug");
+  anzeigen("airline", "–");
+  anzeigen("typ", "–");
+  anzeigen("hoehe", "–");
+  anzeigen("entfernung", "–");
+  anzeigen("tempo", "–");
+  anzeigen("status", "–");
+  anzeigen("start", "–");
+  anzeigen("ziel", "–");
+
+  fotoAnzeigen(null);
+}
+
+
+// Flugdaten laden
+
+var laedt = false;
+
+function laden() {
+
+  if (laedt) return;
+  laedt = true;
+
+  var xhr = new XMLHttpRequest();
+
+  xhr.open(
+    "GET",
+    "https://flightbox-rohrbach.hoffi081527.workers.dev/?t="
+    + new Date().getTime(),
+    true
+  );
+
+  xhr.timeout = 25000;
+
+  xhr.onreadystatechange = function() {
+
+    if (xhr.readyState !== 4) return;
+
+    laedt = false;
+
+    if (xhr.status !== 200) {
+      anzeigen(
+        "updated",
+        "Datenabruf fehlgeschlagen – letzter Stand"
+      );
+      return;
+    }
+
+    try {
+
+      var daten = JSON.parse(xhr.responseText);
+      var flugzeuge = daten.ac || [];
+
+      flugzeuge.sort(function(a, b) {
+        return Number(a.dst == null ? 9999 : a.dst)
+             - Number(b.dst == null ? 9999 : b.dst);
+      });
+
+      if (flugzeuge.length === 0) {
+
+        keinFlugzeug();
+
+      } else {
+
+        var f = flugzeuge[0];
+
+        var rufzeichen = (f.flight || "")
+          .trim()
+          .toUpperCase();
+
+        anzeigen(
+          "flug",
+          rufzeichen || "Unbekannt"
+        );
+
+        anzeigen(
+          "airline",
+          airlines[rufzeichen.substring(0, 3)]
+          || "Unbekannte Airline"
+        );
+
+        anzeigen(
+          "typ",
+          f.t || "Unbekannt"
+        );
+
+        anzeigen(
+          "hoehe",
+          f.alt_baro === "ground"
+            ? "Am Boden"
+            : typeof f.alt_baro === "number"
+              ? Math.round(f.alt_baro * 0.3048) + " m"
+              : "Unbekannt"
+        );
+
+        anzeigen(
+          "entfernung",
+          f.dst != null
+            ? (f.dst * 1.852).toFixed(1) + " km"
+            : "Unbekannt"
+        );
+
+        anzeigen(
+          "tempo",
+          f.gs != null
+            ? Math.round(f.gs * 1.852) + " km/h"
+            : "Unbekannt"
+        );
+
+        var rate = f.baro_rate;
+        var status = "Unbekannt";
+
+        if (f.alt_baro === "ground") {
+          status = "Am Boden";
+        } else if (typeof rate === "number") {
+          if (rate > 100) {
+            status = "Steigt";
+          } else if (rate < -100) {
+            status = "Sinkt";
+          } else {
+            status = "Horizontalflug";
+          }
+        }
+
+        anzeigen("status", status);
+
+        anzeigen(
+          "start",
+          f.startstadt || "Unbekannt"
+        );
+
+        anzeigen(
+          "ziel",
+          f.zielstadt || "Unbekannt"
+        );
+
+        fotoAnzeigen(f);
+
       }
 
-      anzeigen("status", status);
-     
-anzeigen("start", f.startstadt || "Unbekannt");
-anzeigen("ziel", f.zielstadt || "Unbekannt");
+      anzeigen(
+        "updated",
+        "Letzte Datenaktualisierung: " +
+        new Date(daten.now || Date.now())
+          .toLocaleTimeString("de-DE")
+      );
+
+    } catch (e) {
+
+      anzeigen(
+        "updated",
+        "Fehler beim Lesen der Daten"
+      );
 
     }
 
-    anzeigen("updated",
-      "Letzte Datenaktualisierung: " +
-      new Date(daten.now || Date.now()).toLocaleTimeString("de-DE")
-    );
+  };
 
-  } catch (e) {
-    anzeigen("updated", "Fehler beim Lesen der Daten");
-  }
-};
-xhr.send();
+  xhr.ontimeout = function() {
+    laedt = false;
+    anzeigen("updated", "Zeitüberschreitung beim Datenabruf");
+  };
+
+  xhr.onerror = function() {
+    laedt = false;
+    anzeigen("updated", "Verbindungsfehler");
+  };
+
+  xhr.send();
 
 }
 
+
+// Aktualisierung alle 30 Sekunden
+
 laden();
 setInterval(laden, 30000);
+
 </script>
+
 </body>
 </html>
-
-
