@@ -1,14 +1,14 @@
 {
-  "aktualisiert": "2026-11-24T10:42:23.972125+00:00",
+  "aktualisiert": "2026-11-24T11:37:28.915168+00:00",
   "flugzeuge": [
     {
-      "flug": "DMMZX",
-      "typ": "FK9",
-      "hex": "3ff1ad",
-      "registrierung": "D-MMZX",
-      "entfernung_km": 18.3,
-      "hoehe_m": 511,
-      "geschwindigkeit_kmh": 234,
+      "flug": "DEBRL",
+      "typ": "BR23",
+      "hex": "3d0911",
+      "registrierung": "D-EBRL",
+      "entfernung_km": 4.6,
+      "hoehe_m": 1288,
+      "geschwindigkeit_kmh": 205,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt",
