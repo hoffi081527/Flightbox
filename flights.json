@@ -1,14 +1,14 @@
 {
-  "aktualisiert": "2026-11-25T19:13:56.431760+00:00",
+  "aktualisiert": "2026-11-25T20:07:03.794671+00:00",
   "flugzeuge": [
     {
-      "flug": "SVA117",
-      "typ": "B789",
-      "hex": "71011d",
-      "registrierung": "HZ-AR11",
-      "entfernung_km": 9.1,
-      "hoehe_m": 11582,
-      "geschwindigkeit_kmh": 877,
+      "flug": "BAW11",
+      "typ": "A388",
+      "hex": "40688b",
+      "registrierung": "G-XLEA",
+      "entfernung_km": 18.8,
+      "hoehe_m": 10668,
+      "geschwindigkeit_kmh": 866,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt",
