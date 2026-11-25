@@ -1,14 +1,14 @@
 {
-  "aktualisiert": "2026-11-25T20:07:03.794671+00:00",
+  "aktualisiert": "2026-11-25T20:59:32.164203+00:00",
   "flugzeuge": [
     {
-      "flug": "BAW11",
-      "typ": "A388",
-      "hex": "40688b",
-      "registrierung": "G-XLEA",
-      "entfernung_km": 18.8,
-      "hoehe_m": 10668,
-      "geschwindigkeit_kmh": 866,
+      "flug": "CTN4457",
+      "typ": "BCS1",
+      "hex": "501c3b",
+      "registrierung": "9A-CAI",
+      "entfernung_km": 17.3,
+      "hoehe_m": 11278,
+      "geschwindigkeit_kmh": 846,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt",
