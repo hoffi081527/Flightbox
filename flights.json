@@ -1,4 +1,35 @@
 {
-  "aktualisiert": "2026-11-25T05:47:59.980759+00:00",
-  "flugzeuge": []
+  "aktualisiert": "2026-11-25T06:47:23.855557+00:00",
+  "flugzeuge": [
+    {
+      "flug": "DLA8LF",
+      "typ": "E195",
+      "hex": "300557",
+      "registrierung": "I-ADJQ",
+      "entfernung_km": 7.3,
+      "hoehe_m": 5547,
+      "geschwindigkeit_kmh": 662,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    },
+    {
+      "flug": "EWG6LU",
+      "typ": "A320",
+      "hex": "3c56f7",
+      "registrierung": "D-AEWW",
+      "entfernung_km": 16.2,
+      "hoehe_m": 3604,
+      "geschwindigkeit_kmh": 578,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    }
+  ]
 }
