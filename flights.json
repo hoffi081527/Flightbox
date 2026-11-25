@@ -1,35 +1,4 @@
 {
-  "aktualisiert": "2026-11-25T13:53:03.098864+00:00",
-  "flugzeuge": [
-    {
-      "flug": "DAH2070",
-      "typ": "B738",
-      "hex": "0a008d",
-      "registrierung": "7T-VKN",
-      "entfernung_km": 12.1,
-      "hoehe_m": 7430,
-      "geschwindigkeit_kmh": 775,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt",
-      "foto": "",
-      "fotograf": "",
-      "foto_link": ""
-    },
-    {
-      "flug": "SVA923",
-      "typ": "B77L",
-      "hex": "710100",
-      "registrierung": "HZ-AK71",
-      "entfernung_km": 16.5,
-      "hoehe_m": 12192,
-      "geschwindigkeit_kmh": 879,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt",
-      "foto": "",
-      "fotograf": "",
-      "foto_link": ""
-    }
-  ]
+  "aktualisiert": "2026-11-25T14:50:13.574271+00:00",
+  "flugzeuge": []
 }
