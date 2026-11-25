@@ -1,20 +1,4 @@
 {
-  "aktualisiert": "2026-11-25T20:59:32.164203+00:00",
-  "flugzeuge": [
-    {
-      "flug": "CTN4457",
-      "typ": "BCS1",
-      "hex": "501c3b",
-      "registrierung": "9A-CAI",
-      "entfernung_km": 17.3,
-      "hoehe_m": 11278,
-      "geschwindigkeit_kmh": 846,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt",
-      "foto": "",
-      "fotograf": "",
-      "foto_link": ""
-    }
-  ]
+  "aktualisiert": "2026-11-25T21:52:42.696643+00:00",
+  "flugzeuge": []
 }
