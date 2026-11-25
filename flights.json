@@ -1,4 +1,20 @@
 {
-  "aktualisiert": "2026-11-25T11:29:31.908451+00:00",
-  "flugzeuge": []
+  "aktualisiert": "2026-11-25T12:32:16.907774+00:00",
+  "flugzeuge": [
+    {
+      "flug": "OCN8FE",
+      "typ": "A320",
+      "hex": "3c66b8",
+      "registrierung": "D-AIUX",
+      "entfernung_km": 16.5,
+      "hoehe_m": 5243,
+      "geschwindigkeit_kmh": 667,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    }
+  ]
 }
