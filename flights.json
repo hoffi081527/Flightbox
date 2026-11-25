@@ -1,4 +1,50 @@
 {
-  "aktualisiert": "2026-11-25T16:46:12.903392+00:00",
-  "flugzeuge": []
+  "aktualisiert": "2026-11-25T17:32:05.809879+00:00",
+  "flugzeuge": [
+    {
+      "flug": "EJU91DT",
+      "typ": "A319",
+      "hex": "440c36",
+      "registrierung": "OE-LKX",
+      "entfernung_km": 11.2,
+      "hoehe_m": 5578,
+      "geschwindigkeit_kmh": 671,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    },
+    {
+      "flug": "EDW39YD",
+      "typ": "A320",
+      "hex": "4b18f2",
+      "registrierung": "HB-JLQ",
+      "entfernung_km": 14.0,
+      "hoehe_m": 9152,
+      "geschwindigkeit_kmh": 704,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    },
+    {
+      "flug": "MBU8TN",
+      "typ": "A20N",
+      "hex": "511187",
+      "registrierung": "ES-MBD",
+      "entfernung_km": 17.3,
+      "hoehe_m": 10363,
+      "geschwindigkeit_kmh": 883,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    }
+  ]
 }
