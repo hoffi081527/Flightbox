@@ -1,14 +1,14 @@
 {
-  "aktualisiert": "2026-11-25T18:16:54.929308+00:00",
+  "aktualisiert": "2026-11-25T19:13:56.431760+00:00",
   "flugzeuge": [
     {
-      "flug": "SAS89L",
-      "typ": "CRJ9",
-      "hex": "4cafd6",
-      "registrierung": "EI-GEC",
-      "entfernung_km": 15.5,
-      "hoehe_m": 3703,
-      "geschwindigkeit_kmh": 630,
+      "flug": "SVA117",
+      "typ": "B789",
+      "hex": "71011d",
+      "registrierung": "HZ-AR11",
+      "entfernung_km": 9.1,
+      "hoehe_m": 11582,
+      "geschwindigkeit_kmh": 877,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt",
