@@ -1,4 +1,35 @@
 {
-  "aktualisiert": "2026-11-25T14:50:13.574271+00:00",
-  "flugzeuge": []
+  "aktualisiert": "2026-11-25T15:44:29.064642+00:00",
+  "flugzeuge": [
+    {
+      "flug": "DEHMS",
+      "typ": "S22T",
+      "hex": "3d186e",
+      "registrierung": "D-EHMS",
+      "entfernung_km": 10.0,
+      "hoehe_m": 1082,
+      "geschwindigkeit_kmh": 262,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    },
+    {
+      "flug": "VIR355",
+      "typ": "A35K",
+      "hex": "4079cd",
+      "registrierung": "G-VEVE",
+      "entfernung_km": 19.1,
+      "hoehe_m": 12192,
+      "geschwindigkeit_kmh": 871,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    }
+  ]
 }
