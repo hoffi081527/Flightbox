@@ -1,4 +1,20 @@
 {
-  "aktualisiert": "2026-11-26T03:39:30.889449+00:00",
-  "flugzeuge": []
+  "aktualisiert": "2026-11-26T04:44:06.098976+00:00",
+  "flugzeuge": [
+    {
+      "flug": "BCS77G",
+      "typ": "A306",
+      "hex": "3c5428",
+      "registrierung": "D-AEAH",
+      "entfernung_km": 14.1,
+      "hoehe_m": 9510,
+      "geschwindigkeit_kmh": 783,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    }
+  ]
 }
