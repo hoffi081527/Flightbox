@@ -1,4 +1,35 @@
 {
-  "aktualisiert": "2026-11-26T08:00:36.167263+00:00",
-  "flugzeuge": []
+  "aktualisiert": "2026-11-26T08:58:33.123528+00:00",
+  "flugzeuge": [
+    {
+      "flug": "OYCVW",
+      "typ": "B350",
+      "hex": "458ed7",
+      "registrierung": "OY-CVW",
+      "entfernung_km": 13.8,
+      "hoehe_m": 10058,
+      "geschwindigkeit_kmh": 519,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "https://t.plnspttrs.net/02780/1803304_8597de59e1_280.jpg",
+      "fotograf": "Kamil Cukrowski",
+      "foto_link": "https://www.planespotters.net/photo/1803304/oy-cvw-private-beech-b300-super-king-air-350?utm_source=api"
+    },
+    {
+      "flug": "PGT5AD",
+      "typ": "B738",
+      "hex": "4b8e46",
+      "registrierung": "TC-CRF",
+      "entfernung_km": 17.5,
+      "hoehe_m": 10973,
+      "geschwindigkeit_kmh": 805,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    }
+  ]
 }
