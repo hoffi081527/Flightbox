@@ -1,4 +1,20 @@
 {
-  "aktualisiert": "2026-11-26T16:53:24.116095+00:00",
-  "flugzeuge": []
+  "aktualisiert": "2026-11-26T17:42:12.494066+00:00",
+  "flugzeuge": [
+    {
+      "flug": "PBW16",
+      "typ": "EC45",
+      "hex": "3dd799",
+      "registrierung": "D-HBWZ",
+      "entfernung_km": 18.2,
+      "hoehe_m": 366,
+      "geschwindigkeit_kmh": 78,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    }
+  ]
 }
