@@ -1,4 +1,20 @@
 {
-  "aktualisiert": "2026-11-26T14:02:17.814365+00:00",
-  "flugzeuge": []
+  "aktualisiert": "2026-11-26T14:58:13.897980+00:00",
+  "flugzeuge": [
+    {
+      "flug": "CTN412",
+      "typ": "BCS1",
+      "hex": "501c3b",
+      "registrierung": "9A-CAI",
+      "entfernung_km": 14.9,
+      "hoehe_m": 5090,
+      "geschwindigkeit_kmh": 641,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    }
+  ]
 }
