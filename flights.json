@@ -1,14 +1,14 @@
 {
-  "aktualisiert": "2026-11-26T14:58:13.897980+00:00",
+  "aktualisiert": "2026-11-26T15:54:16.451859+00:00",
   "flugzeuge": [
     {
-      "flug": "CTN412",
-      "typ": "BCS1",
-      "hex": "501c3b",
-      "registrierung": "9A-CAI",
-      "entfernung_km": 14.9,
-      "hoehe_m": 5090,
-      "geschwindigkeit_kmh": 641,
+      "flug": "VCJ1MA",
+      "typ": "GL5T",
+      "hex": "4d20b6",
+      "registrierung": "9H-VTB",
+      "entfernung_km": 10.4,
+      "hoehe_m": 1890,
+      "geschwindigkeit_kmh": 469,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt",
