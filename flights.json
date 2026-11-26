@@ -1,20 +1,4 @@
 {
-  "aktualisiert": "2026-11-26T15:54:16.451859+00:00",
-  "flugzeuge": [
-    {
-      "flug": "VCJ1MA",
-      "typ": "GL5T",
-      "hex": "4d20b6",
-      "registrierung": "9H-VTB",
-      "entfernung_km": 10.4,
-      "hoehe_m": 1890,
-      "geschwindigkeit_kmh": 469,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt",
-      "foto": "",
-      "fotograf": "",
-      "foto_link": ""
-    }
-  ]
+  "aktualisiert": "2026-11-26T16:53:24.116095+00:00",
+  "flugzeuge": []
 }
