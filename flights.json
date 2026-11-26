@@ -1,20 +1,4 @@
 {
-  "aktualisiert": "2026-11-26T11:47:45.320017+00:00",
-  "flugzeuge": [
-    {
-      "flug": "CFG5RL",
-      "typ": "E190",
-      "hex": "3c6917",
-      "registrierung": "D-AJHW",
-      "entfernung_km": 11.8,
-      "hoehe_m": 4572,
-      "geschwindigkeit_kmh": 588,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt",
-      "foto": "",
-      "fotograf": "",
-      "foto_link": ""
-    }
-  ]
+  "aktualisiert": "2026-11-26T12:50:16.773145+00:00",
+  "flugzeuge": []
 }
