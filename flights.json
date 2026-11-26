@@ -1,14 +1,14 @@
 {
-  "aktualisiert": "2026-11-26T10:55:18.722117+00:00",
+  "aktualisiert": "2026-11-26T11:47:45.320017+00:00",
   "flugzeuge": [
     {
-      "flug": "DLA8EP",
-      "typ": "E195",
-      "hex": "300a7d",
-      "registrierung": "I-ENJC",
-      "entfernung_km": 14.2,
-      "hoehe_m": 5372,
-      "geschwindigkeit_kmh": 673,
+      "flug": "CFG5RL",
+      "typ": "E190",
+      "hex": "3c6917",
+      "registrierung": "D-AJHW",
+      "entfernung_km": 11.8,
+      "hoehe_m": 4572,
+      "geschwindigkeit_kmh": 588,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt",
