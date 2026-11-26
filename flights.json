@@ -1,35 +1,4 @@
 {
-  "aktualisiert": "2026-11-26T06:37:16.467436+00:00",
-  "flugzeuge": [
-    {
-      "flug": "DLA8LF",
-      "typ": "E190",
-      "hex": "3007f2",
-      "registrierung": "I-JENE",
-      "entfernung_km": 11.1,
-      "hoehe_m": 5867,
-      "geschwindigkeit_kmh": 687,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt",
-      "foto": "",
-      "fotograf": "",
-      "foto_link": ""
-    },
-    {
-      "flug": "EJU64XU",
-      "typ": "A320",
-      "hex": "440c96",
-      "registrierung": "OE-ICJ",
-      "entfernung_km": 11.5,
-      "hoehe_m": 6507,
-      "geschwindigkeit_kmh": 699,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt",
-      "foto": "",
-      "fotograf": "",
-      "foto_link": ""
-    }
-  ]
+  "aktualisiert": "2026-11-26T08:00:36.167263+00:00",
+  "flugzeuge": []
 }
