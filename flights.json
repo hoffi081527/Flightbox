@@ -1,4 +1,20 @@
 {
-  "aktualisiert": "2026-11-26T22:19:53.639004+00:00",
-  "flugzeuge": []
+  "aktualisiert": "2026-11-26T23:17:21.554201+00:00",
+  "flugzeuge": [
+    {
+      "flug": "UPS267",
+      "typ": "B763",
+      "hex": "a49ae3",
+      "registrierung": "N396UP",
+      "entfernung_km": 19.3,
+      "hoehe_m": 10523,
+      "geschwindigkeit_kmh": 763,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    }
+  ]
 }
