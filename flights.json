@@ -1,4 +1,20 @@
 {
-  "aktualisiert": "2026-11-26T20:29:39.843829+00:00",
-  "flugzeuge": []
+  "aktualisiert": "2026-11-26T21:22:48.648890+00:00",
+  "flugzeuge": [
+    {
+      "flug": "KLM65X",
+      "typ": "B738",
+      "hex": "484558",
+      "registrierung": "PH-BGA",
+      "entfernung_km": 17.6,
+      "hoehe_m": 11278,
+      "geschwindigkeit_kmh": 915,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    }
+  ]
 }
