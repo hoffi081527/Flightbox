@@ -908,7 +908,7 @@ function radarZeichnen(id, flieger, km) {
       var ruf = (f.flight||"").trim().toUpperCase();
       var name = airlines[ruf.substring(0,3)] || ruf || f.r || f.hex || "Unbekannt";
       var rechts = x < c;
-      el("text",{x:rechts?17:-17,y:5,fill:"#ffffff","font-size":15,"font-weight":"bold","text-anchor":rechts?"start":"end",stroke:"#101820","stroke-width":3,"paint-order":"stroke fill","stroke-linejoin":"round"},name,g);
+      el("text",{x:rechts?17:-17,y:5,fill:"#ffffff","font-size":11,"font-weight":"normal","text-anchor":rechts?"start":"end",stroke:"#101820","stroke-width":3,"paint-order":"stroke fill","stroke-linejoin":"round"},name,g);
       el("title",{},(f.flight||f.r||f.hex||"Unbekannt").trim(),g);
       g.addEventListener("click",function(){anzeigen("radarInfo",(airlines[(f.flight||"").trim().toUpperCase().substring(0,3)] || "Unbekannte Airline")+" | "+(f.flight||f.r||f.hex||"Unbekannt").trim()+" | "+(f.t||"–")+" | "+(f.dst*1.852).toFixed(1)+" km | "+(typeof f.alt_baro==="number"?Math.round(f.alt_baro*0.3048)+" m":"–")+" | "+(typeof f.gs==="number"?Math.round(f.gs*1.852)+" km/h":"–"));});
     }
