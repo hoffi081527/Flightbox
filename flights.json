@@ -1,35 +1,4 @@
 {
-  "aktualisiert": "2026-11-27T08:56:41.599039+00:00",
-  "flugzeuge": [
-    {
-      "flug": "AEE2BR",
-      "typ": "A21N",
-      "hex": "46b835",
-      "registrierung": "SX-NAU",
-      "entfernung_km": 13.4,
-      "hoehe_m": 9754,
-      "geschwindigkeit_kmh": 701,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt",
-      "foto": "",
-      "fotograf": "",
-      "foto_link": ""
-    },
-    {
-      "flug": "AFR191",
-      "typ": "B789",
-      "hex": "39c422",
-      "registrierung": "F-HRBC",
-      "entfernung_km": 19.4,
-      "hoehe_m": 12192,
-      "geschwindigkeit_kmh": 869,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt",
-      "foto": "",
-      "fotograf": "",
-      "foto_link": ""
-    }
-  ]
+  "aktualisiert": "2026-11-27T09:56:11.255110+00:00",
+  "flugzeuge": []
 }
