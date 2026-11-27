@@ -1,14 +1,14 @@
 {
-  "aktualisiert": "2026-11-27T06:36:51.505232+00:00",
+  "aktualisiert": "2026-11-27T07:58:52.945075+00:00",
   "flugzeuge": [
     {
-      "flug": "EWG3WY",
-      "typ": "A320",
-      "hex": "3c56f1",
-      "registrierung": "D-AEWQ",
-      "entfernung_km": 14.2,
-      "hoehe_m": 9098,
-      "geschwindigkeit_kmh": 943,
+      "flug": "SAS601",
+      "typ": "A319",
+      "hex": "45ac4f",
+      "registrierung": "OY-KBO",
+      "entfernung_km": 15.8,
+      "hoehe_m": 9510,
+      "geschwindigkeit_kmh": 942,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt",
