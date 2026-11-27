@@ -1,4 +1,35 @@
 {
-  "aktualisiert": "2026-11-27T16:45:07.565185+00:00",
-  "flugzeuge": []
+  "aktualisiert": "2026-11-27T17:38:20.384730+00:00",
+  "flugzeuge": [
+    {
+      "flug": "THY6VQ",
+      "typ": "B77W",
+      "hex": "4bb145",
+      "registrierung": "TC-LJE",
+      "entfernung_km": 10.3,
+      "hoehe_m": 10668,
+      "geschwindigkeit_kmh": 996,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    },
+    {
+      "flug": "DLH8CF",
+      "typ": "E190",
+      "hex": "3009b7",
+      "registrierung": "I-JENI",
+      "entfernung_km": 15.1,
+      "hoehe_m": 6187,
+      "geschwindigkeit_kmh": 634,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    }
+  ]
 }
