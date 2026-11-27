@@ -116,7 +116,8 @@
   #radarBar {display:flex;align-items:center;justify-content:space-between;width:100%;gap:8px;flex-wrap:wrap;}
   #radarBar button,#radarBar select {background:#243746;color:white;border:1px solid #496579;border-radius:6px;padding:8px;font-size:16px;}
   #bigRadar {width:100%;flex:1;min-height:0;}
-  #radarInfo,#radarMessage {font-size:14px;text-align:center;padding:4px;}
+  #radarMessage {font-size:14px;text-align:center;padding:4px;}
+  #radarInfo {font-size:clamp(20px,3.5vw,34px);font-weight:bold;line-height:1.35;text-align:center;padding:8px;width:100%;overflow-wrap:break-word;}
 </style>
 </head>
 
@@ -194,7 +195,7 @@
 
 <div id="radarOverlay" role="dialog" aria-label="Flugradar">
   <div id="radarBar"><strong>FLUGRADAR ROHRBACH</strong>
-    <label>Radius <select id="radarRange"><option>20</option><option>50</option><option selected>100</option><option>200</option></select> km</label>
+    <label>Radius <select id="radarRange"><option>20</option><option selected>50</option><option>100</option><option>200</option></select> km</label>
     <button id="radarClose" type="button" aria-label="Schließen">✕</button>
   </div>
   <div id="radarMessage"></div>
@@ -882,6 +883,15 @@ function radarZeichnen(id, flieger, km) {
   });
   el("path",{d:"M"+(c-r)+" "+c+" H"+(c+r)+" M"+c+" "+(c-r)+" V"+(c+r),stroke:"#496579",fill:"none"});
   [["N",c,c-r-5],["O",c+r+9,c+5],["S",c,c+r+16],["W",c-r-9,c+5]].forEach(function(v){el("text",{x:v[1],y:v[2],fill:"#b5cad9","font-size":klein?13:16,"text-anchor":"middle"},v[0]);});
+  // Optischer Radar-Sweep, unabhängig vom Datenabruf
+  var sweep = el("g", {"pointer-events":"none"});
+  for (var j=24; j>=1; j--) {
+    var angle=-j*1.5*Math.PI/180;
+    var next=-(j-1)*1.5*Math.PI/180;
+    el("path", {d:"M"+c+" "+c+" L"+(c+r*Math.sin(angle))+" "+(c-r*Math.cos(angle))+" A"+r+" "+r+" 0 0 1 "+(c+r*Math.sin(next))+" "+(c-r*Math.cos(next))+" Z",fill:"#39ff88",opacity:0.22*(25-j)/24},null,sweep);
+  }
+  el("line",{x1:c,y1:c,x2:c,y2:c-r,stroke:"#39ff88","stroke-width":klein?1.7:2.5,opacity:0.9},null,sweep);
+  el("animateTransform",{attributeName:"transform",type:"rotate",from:"0 "+c+" "+c,to:"360 "+c+" "+c,dur:"5s",repeatCount:"indefinite"},null,sweep);
   el("path",{d:"M-9 0 L0 -9 L9 0 L6 0 V8 H-6 V0 Z",fill:"#ffffff",transform:"translate("+c+" "+c+")"});
   var count=0;
   flieger.forEach(function(f){
@@ -895,8 +905,12 @@ function radarZeichnen(id, flieger, km) {
     if(track===null) el("circle",{r:5,fill:"#f9d65c"},null,g);
     else el("path",{d:"M0 -13 L3 -3 L13 4 L13 7 L3 4 L2 10 L6 13 L6 15 L0 13 L-6 15 L-6 13 L-2 10 L-3 4 L-13 7 L-13 4 L-3 -3 Z",fill:"#f9d65c",transform:"rotate("+track+")"},null,g);
     if(!klein){
+      var ruf = (f.flight||"").trim().toUpperCase();
+      var name = airlines[ruf.substring(0,3)] || ruf || f.r || f.hex || "Unbekannt";
+      var rechts = x < c;
+      el("text",{x:rechts?17:-17,y:5,fill:"#ffffff","font-size":15,"font-weight":"bold","text-anchor":rechts?"start":"end",stroke:"#101820","stroke-width":3,"paint-order":"stroke fill","stroke-linejoin":"round"},name,g);
       el("title",{},(f.flight||f.r||f.hex||"Unbekannt").trim(),g);
-      g.addEventListener("click",function(){anzeigen("radarInfo",(f.flight||f.r||f.hex||"Unbekannt").trim()+" | "+(f.t||"–")+" | "+(f.dst*1.852).toFixed(1)+" km | "+(typeof f.alt_baro==="number"?Math.round(f.alt_baro*0.3048)+" m":"–")+" | "+(typeof f.gs==="number"?Math.round(f.gs*1.852)+" km/h":"–"));});
+      g.addEventListener("click",function(){anzeigen("radarInfo",(airlines[(f.flight||"").trim().toUpperCase().substring(0,3)] || "Unbekannte Airline")+" | "+(f.flight||f.r||f.hex||"Unbekannt").trim()+" | "+(f.t||"–")+" | "+(f.dst*1.852).toFixed(1)+" km | "+(typeof f.alt_baro==="number"?Math.round(f.alt_baro*0.3048)+" m":"–")+" | "+(typeof f.gs==="number"?Math.round(f.gs*1.852)+" km/h":"–"));});
     }
   });
   return count;
