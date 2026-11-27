@@ -1,35 +1,4 @@
 {
-  "aktualisiert": "2026-11-27T19:27:28.075479+00:00",
-  "flugzeuge": [
-    {
-      "flug": "SWR4EQ",
-      "typ": "BCS3",
-      "hex": "4b1800",
-      "registrierung": "HB-JCI",
-      "entfernung_km": 13.2,
-      "hoehe_m": 9296,
-      "geschwindigkeit_kmh": 884,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt",
-      "foto": "",
-      "fotograf": "",
-      "foto_link": ""
-    },
-    {
-      "flug": "DLA8LJ",
-      "typ": "Unbekannt",
-      "hex": "300a7e",
-      "registrierung": "",
-      "entfernung_km": 16.2,
-      "hoehe_m": 6058,
-      "geschwindigkeit_kmh": 627,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt",
-      "foto": "",
-      "fotograf": "",
-      "foto_link": ""
-    }
-  ]
+  "aktualisiert": "2026-11-27T20:22:49.346962+00:00",
+  "flugzeuge": []
 }
