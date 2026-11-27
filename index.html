@@ -108,6 +108,15 @@
       max-height: 30vh;
     }
   }
+  #miniRadar {width:100%;height:clamp(65px,17vh,190px);display:block;}
+  #radarTile {cursor:pointer;color:white;font-family:inherit;}
+  #radarTile .label {margin-bottom:2px;}
+  #radarOverlay {position:fixed;inset:0;z-index:1000;background:#101820;padding:10px;display:none;flex-direction:column;align-items:center;}
+  #radarOverlay.open {display:flex;}
+  #radarBar {display:flex;align-items:center;justify-content:space-between;width:100%;gap:8px;flex-wrap:wrap;}
+  #radarBar button,#radarBar select {background:#243746;color:white;border:1px solid #496579;border-radius:6px;padding:8px;font-size:16px;}
+  #bigRadar {width:100%;flex:1;min-height:0;}
+  #radarInfo,#radarMessage {font-size:14px;text-align:center;padding:4px;}
 </style>
 </head>
 
@@ -144,10 +153,10 @@
     <div class="value" id="tempo">–</div>
   </div>
 
-  <div class="tile">
-    <div class="label">STATUS</div>
-    <div class="value" id="status">–</div>
-  </div>
+  <button type="button" class="tile" id="radarTile" aria-label="Großen Radar öffnen">
+    <div class="label">RADAR</div>
+    <svg id="miniRadar" viewBox="0 0 240 240" aria-label="Position des angezeigten Flugzeugs"></svg>
+  </button>
 
   <div class="tile">
     <div class="label">ABFLUGORT</div>
@@ -183,6 +192,15 @@
 
 <div id="updated">Lade Flugzeugdaten ...</div>
 
+<div id="radarOverlay" role="dialog" aria-label="Flugradar">
+  <div id="radarBar"><strong>FLUGRADAR ROHRBACH</strong>
+    <label>Radius <select id="radarRange"><option>20</option><option>50</option><option selected>100</option><option>200</option></select> km</label>
+    <button id="radarClose" type="button" aria-label="Schließen">✕</button>
+  </div>
+  <div id="radarMessage"></div>
+  <svg id="bigRadar" viewBox="0 0 600 600"></svg>
+  <div id="radarInfo">Flugzeug antippen für Details</div>
+</div>
 <script>
 
 // ICAO-Flugzeugtypcodes (Auswahl)
@@ -694,7 +712,7 @@ function keinFlugzeug() {
   anzeigen("hoehe", "–");
   anzeigen("entfernung", "–");
   anzeigen("tempo", "–");
-  anzeigen("status", "–");
+  radarZeichnen("miniRadar", [], 27.78);
   anzeigen("start", "–");
   anzeigen("ziel", "–");
 
@@ -796,22 +814,7 @@ function laden() {
             : "Unbekannt"
         );
 
-        var rate = f.baro_rate;
-        var status = "Unbekannt";
-
-        if (f.alt_baro === "ground") {
-          status = "Am Boden";
-        } else if (typeof rate === "number") {
-          if (rate > 100) {
-            status = "Steigt";
-          } else if (rate < -100) {
-            status = "Sinkt";
-          } else {
-            status = "Horizontalflug";
-          }
-        }
-
-        anzeigen("status", status);
+        radarZeichnen("miniRadar", [f], 27.78);
 
         anzeigen(
           "start",
@@ -859,6 +862,67 @@ function laden() {
 
 }
 
+
+
+var radarOffen = false, radarTimer = null, radarAnfrage = null;
+function radarZeichnen(id, flieger, km) {
+  var svg = document.getElementById(id), klein = id === "miniRadar";
+  var c = klein ? 120 : 300, r = c * 0.82;
+  while (svg.firstChild) svg.removeChild(svg.firstChild);
+  function el(tag, attrs, text, parent) {
+    var n = document.createElementNS("http://www.w3.org/2000/svg", tag);
+    Object.keys(attrs).forEach(function(k){n.setAttribute(k, attrs[k]);});
+    if (text != null) n.textContent = text;
+    (parent || svg).appendChild(n); return n;
+  }
+  el("circle",{cx:c,cy:c,r:r,fill:"#142b36",stroke:"#79a9a8","stroke-width":2});
+  [0.25,0.5,0.75].forEach(function(q){
+    el("circle",{cx:c,cy:c,r:r*q,fill:"none",stroke:"#496579"});
+    if(!klein) el("text",{x:c+5,y:c-r*q+14,fill:"#b5cad9","font-size":12},(km*q)+" km");
+  });
+  el("path",{d:"M"+(c-r)+" "+c+" H"+(c+r)+" M"+c+" "+(c-r)+" V"+(c+r),stroke:"#496579",fill:"none"});
+  [["N",c,c-r-5],["O",c+r+9,c+5],["S",c,c+r+16],["W",c-r-9,c+5]].forEach(function(v){el("text",{x:v[1],y:v[2],fill:"#b5cad9","font-size":klein?13:16,"text-anchor":"middle"},v[0]);});
+  el("path",{d:"M-9 0 L0 -9 L9 0 L6 0 V8 H-6 V0 Z",fill:"#ffffff",transform:"translate("+c+" "+c+")"});
+  var count=0;
+  flieger.forEach(function(f){
+    if(typeof f.dst!=="number" || typeof f.dir!=="number" || !isFinite(f.dst) || !isFinite(f.dir) || f.dst<0 || f.dst*1.852>km+0.001) return;
+    count++;
+    var d=f.dst*1.852/km*r, a=f.dir*Math.PI/180;
+    var x=c+Math.sin(a)*d, y=c-Math.cos(a)*d;
+    var g=el("g",{transform:"translate("+x+" "+y+")",cursor:klein?"inherit":"pointer"});
+    var track=typeof f.track==="number"?f.track:(typeof f.true_heading==="number"?f.true_heading:null);
+    el("circle",{r:14,fill:"transparent"},null,g);
+    if(track===null) el("circle",{r:5,fill:"#f9d65c"},null,g);
+    else el("path",{d:"M0 -13 L3 -3 L13 4 L13 7 L3 4 L2 10 L6 13 L6 15 L0 13 L-6 15 L-6 13 L-2 10 L-3 4 L-13 7 L-13 4 L-3 -3 Z",fill:"#f9d65c",transform:"rotate("+track+")"},null,g);
+    if(!klein){
+      el("title",{},(f.flight||f.r||f.hex||"Unbekannt").trim(),g);
+      g.addEventListener("click",function(){anzeigen("radarInfo",(f.flight||f.r||f.hex||"Unbekannt").trim()+" | "+(f.t||"–")+" | "+(f.dst*1.852).toFixed(1)+" km | "+(typeof f.alt_baro==="number"?Math.round(f.alt_baro*0.3048)+" m":"–")+" | "+(typeof f.gs==="number"?Math.round(f.gs*1.852)+" km/h":"–"));});
+    }
+  });
+  return count;
+}
+function radarLaden(){
+  if(!radarOffen)return;
+  if(radarAnfrage) radarAnfrage.abort();
+  var km=Number(document.getElementById("radarRange").value);
+  var x=new XMLHttpRequest(); radarAnfrage=x;
+  x.open("GET","https://flightbox-rohrbach.hoffi081527.workers.dev/?radar="+km+"&t="+Date.now(),true);
+  x.timeout=25000;
+  x.onload=function(){
+    if(!radarOffen||radarAnfrage!==x)return;
+    radarAnfrage=null;
+    try {if(x.status!==200)throw Error(); var data=JSON.parse(x.responseText); if(!Array.isArray(data.ac))throw Error(); var n=radarZeichnen("bigRadar",data.ac,km); anzeigen("radarMessage",n+" Flugzeuge mit Position · "+new Date(data.now||Date.now()).toLocaleTimeString("de-DE"));}
+    catch(e){anzeigen("radarMessage","Radarabruf fehlgeschlagen – letzter Stand");}
+  };
+  x.onerror=x.ontimeout=function(){if(radarAnfrage===x){radarAnfrage=null;anzeigen("radarMessage","Radarabruf fehlgeschlagen – letzter Stand");}};
+  x.send();
+}
+function radarSchliessen(){radarOffen=false;clearInterval(radarTimer);if(radarAnfrage){radarAnfrage.abort();radarAnfrage=null;}document.getElementById("radarOverlay").className="";document.body.style.overflow="";}
+document.getElementById("radarTile").onclick=function(){radarOffen=true;document.getElementById("radarOverlay").className="open";document.body.style.overflow="hidden";radarZeichnen("bigRadar",[],Number(document.getElementById("radarRange").value));anzeigen("radarMessage","Lade Radardaten ...");radarLaden();clearInterval(radarTimer);radarTimer=setInterval(radarLaden,30000);};
+document.getElementById("radarClose").onclick=radarSchliessen;
+document.getElementById("radarRange").onchange=function(){radarZeichnen("bigRadar",[],Number(this.value));anzeigen("radarInfo","Flugzeug antippen für Details");anzeigen("radarMessage","Lade Radardaten ...");radarLaden();};
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&radarOffen)radarSchliessen();});
+radarZeichnen("miniRadar",[],27.78);
 
 // Aktualisierung alle 30 Sekunden
 
