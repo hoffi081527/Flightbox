@@ -1,4 +1,20 @@
 {
-  "aktualisiert": "2026-11-27T09:56:11.255110+00:00",
-  "flugzeuge": []
+  "aktualisiert": "2026-11-27T10:45:49.586574+00:00",
+  "flugzeuge": [
+    {
+      "flug": "GFA002",
+      "typ": "B789",
+      "hex": "89408b",
+      "registrierung": "A9C-FA",
+      "entfernung_km": 11.9,
+      "hoehe_m": 11270,
+      "geschwindigkeit_kmh": 982,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    }
+  ]
 }
