@@ -1,14 +1,14 @@
 {
-  "aktualisiert": "2026-11-28T08:38:32.314611+00:00",
+  "aktualisiert": "2026-11-28T09:29:35.856967+00:00",
   "flugzeuge": [
     {
-      "flug": "DLA1C",
-      "typ": "E190",
-      "hex": "3009b7",
-      "registrierung": "I-JENI",
-      "entfernung_km": 14.1,
-      "hoehe_m": 5250,
-      "geschwindigkeit_kmh": 654,
+      "flug": "SWR4DK",
+      "typ": "E195",
+      "hex": "4b19e6",
+      "registrierung": "HB-JVA",
+      "entfernung_km": 19.5,
+      "hoehe_m": 9167,
+      "geschwindigkeit_kmh": 898,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt",
