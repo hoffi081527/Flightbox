@@ -1,4 +1,20 @@
 {
-  "aktualisiert": "2026-11-28T02:53:35.236686+00:00",
-  "flugzeuge": []
+  "aktualisiert": "2026-11-28T03:41:10.439934+00:00",
+  "flugzeuge": [
+    {
+      "flug": "CMA571",
+      "typ": "B77L",
+      "hex": "39b225",
+      "registrierung": "F-HMRF",
+      "entfernung_km": 9.9,
+      "hoehe_m": 10363,
+      "geschwindigkeit_kmh": 849,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    }
+  ]
 }
