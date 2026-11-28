@@ -1,14 +1,14 @@
 {
-  "aktualisiert": "2026-11-28T10:21:42.822682+00:00",
+  "aktualisiert": "2026-11-28T11:11:27.297259+00:00",
   "flugzeuge": [
     {
-      "flug": "N747MC",
-      "typ": "S22T",
-      "hex": "aa0da1",
-      "registrierung": "N747MC",
-      "entfernung_km": 15.5,
-      "hoehe_m": 2438,
-      "geschwindigkeit_kmh": 285,
+      "flug": "RYR24KF",
+      "typ": "B738",
+      "hex": "4d227b",
+      "registrierung": "9H-QDV",
+      "entfernung_km": 19.8,
+      "hoehe_m": 9761,
+      "geschwindigkeit_kmh": 761,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt",
