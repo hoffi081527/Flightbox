@@ -1,20 +1,4 @@
 {
-  "aktualisiert": "2026-11-28T00:48:46.780552+00:00",
-  "flugzeuge": [
-    {
-      "flug": "WUK2944",
-      "typ": "A21N",
-      "hex": "407fc1",
-      "registrierung": "G-WUKW",
-      "entfernung_km": 13.5,
-      "hoehe_m": 10980,
-      "geschwindigkeit_kmh": 716,
-      "status": "In der Luft",
-      "start": "Unbekannt",
-      "ziel": "Unbekannt",
-      "foto": "",
-      "fotograf": "",
-      "foto_link": ""
-    }
-  ]
+  "aktualisiert": "2026-11-28T02:04:03.095544+00:00",
+  "flugzeuge": []
 }
