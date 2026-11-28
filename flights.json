@@ -1,14 +1,14 @@
 {
-  "aktualisiert": "2026-11-28T07:50:41.017395+00:00",
+  "aktualisiert": "2026-11-28T08:38:32.314611+00:00",
   "flugzeuge": [
     {
-      "flug": "THY3TJ",
-      "typ": "A21N",
-      "hex": "4bb2b0",
-      "registrierung": "TC-LUP",
-      "entfernung_km": 16.3,
-      "hoehe_m": 10668,
-      "geschwindigkeit_kmh": 870,
+      "flug": "DLA1C",
+      "typ": "E190",
+      "hex": "3009b7",
+      "registrierung": "I-JENI",
+      "entfernung_km": 14.1,
+      "hoehe_m": 5250,
+      "geschwindigkeit_kmh": 654,
       "status": "In der Luft",
       "start": "Unbekannt",
       "ziel": "Unbekannt",
