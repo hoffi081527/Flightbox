@@ -1,4 +1,35 @@
 {
-  "aktualisiert": "2026-11-28T04:41:45.924550+00:00",
-  "flugzeuge": []
+  "aktualisiert": "2026-11-28T05:38:08.433637+00:00",
+  "flugzeuge": [
+    {
+      "flug": "MSR5528",
+      "typ": "A332",
+      "hex": "0100a2",
+      "registrierung": "SU-GCE",
+      "entfernung_km": 9.4,
+      "hoehe_m": 12192,
+      "geschwindigkeit_kmh": 790,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    },
+    {
+      "flug": "EJU63ME",
+      "typ": "A320",
+      "hex": "440053",
+      "registrierung": "OE-ICK",
+      "entfernung_km": 16.9,
+      "hoehe_m": 9114,
+      "geschwindigkeit_kmh": 807,
+      "status": "In der Luft",
+      "start": "Unbekannt",
+      "ziel": "Unbekannt",
+      "foto": "",
+      "fotograf": "",
+      "foto_link": ""
+    }
+  ]
 }
